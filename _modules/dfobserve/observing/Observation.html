@@ -1,0 +1,1337 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dfobserve.observing.Observation &#8212; DFObserve Manual</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">DFObserve Manual</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   DFObserve Guide
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Manual
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Observation.html">
+   The Observation Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../AutoObserve.html">
+   The AutoObserve Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../QuickObserve.html">
+   QuickObserve
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Webserver.html">
+   Communicating through the Webserver
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../WebRequestSummary.html">
+   Reponses from the Webserver
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Utilities.html">
+   Utilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CLI.html">
+   Command Line Interface
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../api.html">
+   API documentation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../_autosummary/dfobserve.html">
+     dfobserve
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.checks.html">
+       dfobserve.checks
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.checks.check_cameras.html">
+         dfobserve.checks.check_cameras
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.checks.check_dragonfly.html">
+         dfobserve.checks.check_dragonfly
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.checks.check_filters.html">
+         dfobserve.checks.check_filters
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.checks.check_focusers.html">
+         dfobserve.checks.check_focusers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.checks.check_mount.html">
+         dfobserve.checks.check_mount
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.exceptions.html">
+       dfobserve.exceptions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.exceptions.exceptions.html">
+         dfobserve.exceptions.exceptions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.logging.html">
+       dfobserve.logging
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.logging.logger.html">
+         dfobserve.logging.logger
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.observing.html">
+       dfobserve.observing
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.observing.AutoObserve.html">
+         dfobserve.observing.AutoObserve
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.observing.Observation.html">
+         dfobserve.observing.Observation
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.utils.html">
+       dfobserve.utils
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.CameraUtils.html">
+         dfobserve.utils.CameraUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.FilterTilterUtils.html">
+         dfobserve.utils.FilterTilterUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.FlipFlatUtils.html">
+         dfobserve.utils.FlipFlatUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.HardwareUtils.html">
+         dfobserve.utils.HardwareUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.MountUtils.html">
+         dfobserve.utils.MountUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.NMS_utils.html">
+         dfobserve.utils.NMS_utils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.NetworkUtils.html">
+         dfobserve.utils.NetworkUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.SkyXUtils.html">
+         dfobserve.utils.SkyXUtils
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.webserver.html">
+       dfobserve.webserver
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.webserver.WebRequests.html">
+         dfobserve.webserver.WebRequests
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <h1>Source code for dfobserve.observing.Observation</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Create detailed Observation parameters for individual targets including their calibration frames.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">subprocess</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+
+<span class="kn">from</span> <span class="nn">dfobserve.exceptions.exceptions</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AstropyNameError</span><span class="p">,</span>
+    <span class="n">DayTimeError</span><span class="p">,</span>
+    <span class="n">EndOfNightError</span><span class="p">,</span>
+    <span class="n">FilterNotRecognizedError</span><span class="p">,</span>
+    <span class="n">TargetNotUpError</span><span class="p">,</span>
+    <span class="n">TargetUptimeError</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">..logging</span> <span class="kn">import</span> <span class="n">Logger</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span><span class="p">,</span> <span class="n">get_sun</span><span class="p">,</span> <span class="n">get_moon</span><span class="p">,</span> <span class="n">EarthLocation</span><span class="p">,</span> <span class="n">AltAz</span>
+<span class="kn">from</span> <span class="nn">astropy.wcs</span> <span class="kn">import</span> <span class="n">WCS</span>
+<span class="kn">from</span> <span class="nn">astropy.time</span> <span class="kn">import</span> <span class="n">Time</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span><span class="p">,</span> <span class="n">date</span> <span class="k">as</span> <span class="n">dt_date</span>
+<span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">SkyXUtils</span>
+
+<span class="n">send_web_request</span> <span class="o">=</span> <span class="s2">&quot;python3 C :/Dragonfly/Programs/SendWebRequestToArray.py&quot;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Observation&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;get_sunset&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;get_moonset&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;get_moonrise&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;get_sunrise&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;get_morning_twilight&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="Observation"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.Observation">[docs]</a><span class="k">class</span> <span class="nc">Observation</span><span class="p">:</span>
+<div class="viewcode-block" id="Observation.__init__"><a class="viewcode-back" href="../../../_autosummary/dfobserve.observing.Observation.html#dfobserve.observing.Observation.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">target</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>  <span class="c1"># Target recognized by TheSkyX</span>
+        <span class="n">exptime</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3600</span><span class="p">,</span>  <span class="c1"># seconds</span>
+        <span class="n">iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>  <span class="c1"># number of exposures to obtain</span>
+        <span class="n">do_focus</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># do a focus run before starting</span>
+        <span class="n">min_altitude</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">35.0</span><span class="p">,</span>  <span class="c1"># degrees</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize an Observation object. An observation is defined by its `target`</span>
+<span class="sd">        and the settings for how it should be observed.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        target : str</span>
+<span class="sd">            name of target to observe. Must be recognized by TheSkyX</span>
+<span class="sd">        exptime : int, default : 3600</span>
+<span class="sd">            exposure time in seconds. (Default : 3600)</span>
+<span class="sd">        iterations : int, default : 2</span>
+<span class="sd">            number of exposures to obtain. (Default : 2)</span>
+<span class="sd">        do_focus : bool, default : True</span>
+<span class="sd">            whether to do a focus run before the iteration. (Default : True)</span>
+<span class="sd">        min_altitude : float, default : 35</span>
+<span class="sd">            Minimum altitude to use. If a target is below this altitude at the beginning of an exposure, the</span>
+<span class="sd">            script will bail and the telescope will slew to a safe position.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exptime</span> <span class="o">=</span> <span class="n">exptime</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">do_focus</span> <span class="o">=</span> <span class="n">do_focus</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">iterations</span> <span class="o">=</span> <span class="n">iterations</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_altitude</span> <span class="o">=</span> <span class="n">min_altitude</span></div>
+
+<div class="viewcode-block" id="Observation.check_target"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.Observation.check_target">[docs]</a>    <span class="k">def</span> <span class="nf">check_target</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Confirm that the input target is recognized by TheSkyX and astropy, else raise an error</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check astropy</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">AstropyNameError</span><span class="p">(</span><span class="s2">&quot;SkyCoord.from_name(target) raised an exception.&quot;</span><span class="p">)</span>
+        <span class="c1"># Check TheSkyX</span>
+        <span class="n">SkyXUtils</span><span class="o">.</span><span class="n">check_target_exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+        <span class="k">return</span></div>
+
+<div class="viewcode-block" id="Observation.calc_target_rise"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.Observation.calc_target_rise">[docs]</a>    <span class="k">def</span> <span class="nf">calc_target_rise</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="s2">&quot;today&quot;</span><span class="p">,</span> <span class="n">utcoffset</span><span class="o">=-</span><span class="mi">6</span><span class="p">,</span> <span class="n">return_local</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the time when the target rises above the set minimum altitude (after sunset) For now, always &#39;today&#39;.</span>
+<span class="sd">        If the target rises before sunset, sunset time is returned.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        date: str, default: &#39;today&#39;</span>
+<span class="sd">            date to use in YYYY-MM-DD or &#39;today&#39;.</span>
+<span class="sd">        utcoffset: float, default: -6</span>
+<span class="sd">            utc offset between NMS and UTC</span>
+<span class="sd">        return_local: bool, default: True</span>
+<span class="sd">            whether to return the time in local time. Otherwise, UTC is returned</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        target_set: astropy.time.Time</span>
+<span class="sd">            astropy Time object containing the time (either in UTC or local.)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">obsloc</span> <span class="o">=</span> <span class="n">EarthLocation</span><span class="p">(</span>
+            <span class="n">lon</span><span class="o">=-</span><span class="mf">105.5302</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mf">32.9024</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">2225</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span>
+        <span class="p">)</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">date</span> <span class="o">==</span> <span class="s2">&quot;today&quot;</span><span class="p">:</span>
+            <span class="n">dt_string</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dt_string</span> <span class="o">=</span> <span class="n">date</span>
+        <span class="n">midnight</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dt_string</span><span class="si">}</span><span class="s2"> 23:59:59&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">utcoffset</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+        <span class="n">delta_midnight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+        <span class="n">obs_times</span> <span class="o">=</span> <span class="n">midnight</span> <span class="o">+</span> <span class="n">delta_midnight</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="n">AltAz</span><span class="p">(</span><span class="n">obstime</span><span class="o">=</span><span class="n">obs_times</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">obsloc</span><span class="p">)</span>
+        <span class="n">target_alt</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span><span class="o">.</span><span class="n">alt</span>
+        <span class="n">sunset</span> <span class="o">=</span> <span class="n">get_sunset</span><span class="p">(</span><span class="n">return_local</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">)</span>
+        <span class="n">target_rise_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">target_alt</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_altitude</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">obs_times</span> <span class="o">&gt;</span> <span class="n">sunset</span><span class="p">)</span>
+        <span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">target_rise</span> <span class="o">=</span> <span class="n">obs_times</span><span class="p">[</span><span class="n">target_rise_ind</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">return_local</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">target_rise</span> <span class="o">+</span> <span class="n">utcoffset</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">target_rise</span></div>
+
+<div class="viewcode-block" id="Observation.calc_target_set"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.Observation.calc_target_set">[docs]</a>    <span class="k">def</span> <span class="nf">calc_target_set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="s2">&quot;today&quot;</span><span class="p">,</span> <span class="n">utcoffset</span><span class="o">=-</span><span class="mi">6</span><span class="p">,</span> <span class="n">return_local</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the time when the target sets below the set minimum altitude (after sunset) For now, always &#39;today&#39;.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        date: str, default: &#39;today&#39;</span>
+<span class="sd">            date to use in YYYY-MM-DD or &#39;today&#39;.</span>
+<span class="sd">        utcoffset: float, default: -6</span>
+<span class="sd">            utc offset between NMS and UTC</span>
+<span class="sd">        return_local: bool, default: True</span>
+<span class="sd">            whether to return the time in local time. Otherwise, UTC is returned</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        target_set: astropy.time.Time</span>
+<span class="sd">            astropy Time object containing the time (either in UTC or local.)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">obsloc</span> <span class="o">=</span> <span class="n">EarthLocation</span><span class="p">(</span>
+            <span class="n">lon</span><span class="o">=-</span><span class="mf">105.5302</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mf">32.9024</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">2225</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span>
+        <span class="p">)</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">date</span> <span class="o">==</span> <span class="s2">&quot;today&quot;</span><span class="p">:</span>
+            <span class="n">dt_string</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dt_string</span> <span class="o">=</span> <span class="n">date</span>
+        <span class="n">midnight</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dt_string</span><span class="si">}</span><span class="s2"> 23:59:59&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">utcoffset</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+        <span class="n">delta_midnight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+        <span class="n">obs_times</span> <span class="o">=</span> <span class="n">midnight</span> <span class="o">+</span> <span class="n">delta_midnight</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="n">AltAz</span><span class="p">(</span><span class="n">obstime</span><span class="o">=</span><span class="n">obs_times</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">obsloc</span><span class="p">)</span>
+        <span class="n">target_alt</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span><span class="o">.</span><span class="n">alt</span>
+        <span class="n">target_set_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">target_alt</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_altitude</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+            <span class="o">&amp;</span> <span class="p">(</span><span class="n">obs_times</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_target_rise</span><span class="p">(</span><span class="n">return_local</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">))</span>
+        <span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">target_set</span> <span class="o">=</span> <span class="n">obs_times</span><span class="p">[</span><span class="n">target_set_ind</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">return_local</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">target_set</span> <span class="o">+</span> <span class="n">utcoffset</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">target_set</span></div>
+
+<div class="viewcode-block" id="Observation.calc_target_altitude"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.Observation.calc_target_altitude">[docs]</a>    <span class="k">def</span> <span class="nf">calc_target_altitude</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">utcoffset</span><span class="o">=-</span><span class="mi">6</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the target&#39;s current altitude.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">obsloc</span> <span class="o">=</span> <span class="n">EarthLocation</span><span class="p">(</span>
+            <span class="n">lon</span><span class="o">=-</span><span class="mf">105.5302</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mf">32.9024</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">2225</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span>
+        <span class="p">)</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="n">dt_string</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
+        <span class="n">time_check</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">dt_string</span><span class="p">)</span> <span class="o">-</span> <span class="n">utcoffset</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="n">AltAz</span><span class="p">(</span><span class="n">obstime</span><span class="o">=</span><span class="n">time_check</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">obsloc</span><span class="p">)</span>
+        <span class="n">target_alt</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span><span class="o">.</span><span class="n">alt</span>
+        <span class="k">if</span> <span class="n">target_alt</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_altitude</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="Observation.set_tilts"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.Observation.set_tilts">[docs]</a>    <span class="k">def</span> <span class="nf">set_tilts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filtname</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the filter angles for either Halpha or OIII.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        filtname : str</span>
+<span class="sd">            Either &#39;Halpha&#39; or &#39;OIII&#39; (&#39;halpha&#39;,&#39;oiii&#39;, &#39;[OIII]&#39;, and &#39;o3&#39; accepted)</span>
+<span class="sd">        angle : float</span>
+<span class="sd">            tilt angle. Must be between -20 and 20.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Must choose an angle between -20 and 20&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">filtname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Halpha&quot;</span><span class="p">,</span> <span class="s2">&quot;halpha&quot;</span><span class="p">,</span> <span class="s2">&quot;HALPHA&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ha_tilt</span> <span class="o">=</span> <span class="n">angle</span>
+        <span class="k">elif</span> <span class="n">filtname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;OIII&quot;</span><span class="p">,</span> <span class="s2">&quot;oiii&quot;</span><span class="p">,</span> <span class="s2">&quot;o3&quot;</span><span class="p">,</span> <span class="s2">&quot;[OIII]&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">oiii_tilt</span> <span class="o">=</span> <span class="n">angle</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">FilterNotRecognizedError</span><span class="p">(</span><span class="s2">&quot;filter name not in allowed list&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Observation.configure_observation"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.Observation.configure_observation">[docs]</a>    <span class="k">def</span> <span class="nf">configure_observation</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">wait_until</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">off_band_exptime</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">600</span><span class="p">,</span>  <span class="c1"># seconds</span>
+        <span class="n">off_band_throughout</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">dither_angle</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span>  <span class="c1"># arcmin</span>
+        <span class="n">dither_pattern</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+        <span class="n">randomize_dithers</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set up when and how observations should occur</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        wait_until : str, optional</span>
+<span class="sd">            key to not start observations until a certain time. If none supplied, start immediately. Options include</span>
+<span class="sd">                `None`: observations will start immediately upon script being run.</span>
+<span class="sd">                `&#39;sunset&#39;` : observations will wait until sunset local time \n</span>
+<span class="sd">                `&#39;moonset&#39;` : observations will wait until the moon sets \n</span>
+<span class="sd">                `&#39;target_rise&#39;` : observations will wait until object rises above min_alt.</span>
+<span class="sd">                `&#39;HH:MM:SS&#39;`: observations will start at the requested time. Default is local, but adding UTC to the end of the string will use UTC.</span>
+<span class="sd">        off_band_exptime : int, default : 600</span>
+<span class="sd">            exptime (seconds) for the continuum/OH filters. These shorter</span>
+<span class="sd">            exposures can be taken once, or throughout the longer on exposure.</span>
+<span class="sd">            (Default : 600)</span>
+<span class="sd">        off_band_throughout : bool, default : True</span>
+<span class="sd">            keep taking off-band images throughout on band exp? (Default : True)</span>
+<span class="sd">        dither_angle : int, default : 25</span>
+<span class="sd">            angle to use (in arcmin) for dithers off the target. (Default : 25)</span>
+<span class="sd">        dither_pattern : list, optional</span>
+<span class="sd">            The pattern on which to dither. A 3x3 grid is used for pointings, with each grid</span>
+<span class="sd">            point separated by `dither_angle`. The grid is</span>
+
+<span class="sd">                    1 \t 2 \t 3 \n</span>
+<span class="sd">                    4 \t 5 \t 6 \n</span>
+<span class="sd">                    7 \t 8 \t 9</span>
+
+<span class="sd">            By default, the pattern starts on the object (pos 5) moves to 6, and wraps</span>
+<span class="sd">            counter-clockwise around. You can specify any dither sequence of any length.</span>
+
+<span class="sd">            By setting to a subset of the numbers 1-9, if `iterations` is greater than</span>
+<span class="sd">            the sequence length, a new sequence will start back at the first defined position.</span>
+<span class="sd">            For example, if iterations = 4, and `dither_pattern` is set to [4,6], then the observing</span>
+<span class="sd">            sequence will be position 4,6, 4,6.</span>
+<span class="sd">        randomize_dithers : bool, default : False</span>
+<span class="sd">            take the dither position list and randomize it. (Default : False)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># if wait_until is not None:</span>
+        <span class="c1">#     if wait_until not in [&quot;sunset&quot;, &quot;moonset&quot;, &quot;target_rise&quot;]:</span>
+        <span class="c1">#         try:</span>
+        <span class="c1">#             in_date = (</span>
+        <span class="c1">#                 datetime.now().strftime(&quot;%Y-%m-%d&quot;) + &quot; &quot; + self.wait_until</span>
+        <span class="c1">#             )</span>
+        <span class="c1">#             time = Time(in_date)</span>
+        <span class="c1">#             self.wait_until = wait_until</span>
+        <span class="c1">#         except:</span>
+        <span class="c1">#             raise AssertionError(&quot;input time must by HH:MM:SS format&quot;)</span>
+        <span class="c1">#     else:</span>
+        <span class="c1">#         self.wait_until = wait_until</span>
+        <span class="c1"># else:</span>
+        <span class="c1">#     self.wait_until = None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait_until</span> <span class="o">=</span> <span class="n">wait_until</span>
+        <span class="c1"># Check altitudes at wait until times.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">off_band_exptime</span> <span class="o">=</span> <span class="n">off_band_exptime</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">off_band_throughout</span> <span class="o">=</span> <span class="n">off_band_throughout</span>
+        <span class="k">if</span> <span class="n">off_band_throughout</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">n_cals</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">exptime</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">off_band_exptime</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">n_cals</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dither_angle</span> <span class="o">=</span> <span class="n">dither_angle</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dither_pattern</span> <span class="o">=</span> <span class="n">dither_pattern</span>
+        <span class="k">if</span> <span class="n">randomize_dithers</span><span class="p">:</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dither_pattern</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dither_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dither_angle</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dither_angle</span><span class="p">],</span>  <span class="c1"># pos east and north</span>
+            <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dither_angle</span><span class="p">],</span>
+            <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">dither_angle</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dither_angle</span><span class="p">],</span>
+            <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dither_angle</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="mi">4</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">dither_angle</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="mi">6</span><span class="p">:</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dither_angle</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">dither_angle</span><span class="p">],</span>
+            <span class="mi">7</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">dither_angle</span><span class="p">],</span>
+            <span class="mi">8</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">dither_angle</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">dither_angle</span><span class="p">],</span>
+        <span class="p">}</span></div>
+
+<div class="viewcode-block" id="Observation.configure_calibrations"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.Observation.configure_calibrations">[docs]</a>    <span class="k">def</span> <span class="nf">configure_calibrations</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">n_darks</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">dark_exptime</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="n">take_darks</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;after&quot;</span><span class="p">,</span>
+        <span class="n">n_flats</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">flat_exptime</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="n">take_flats</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;after&quot;</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        n_darks : int, default: 0</span>
+<span class="sd">            number of dark frames to take. (Default : 0)</span>
+<span class="sd">        dark_exptime : int, default: 10</span>
+<span class="sd">            exposure time in seconds. (Default : 10)</span>
+<span class="sd">        take_darks : str, default: after</span>
+<span class="sd">            when to take darks. Options include</span>
+<span class="sd">                `&#39;before&#39;` : before obs of target \n</span>
+<span class="sd">                `&#39;between&#39;` : between iterations \n</span>
+<span class="sd">                `&#39;after&#39;` : after obs of target \n</span>
+<span class="sd">                `&#39;all&#39;` : before, after, and between iterations</span>
+<span class="sd">        n_flats : int, optional</span>
+<span class="sd">            number of flats to take at end of observation. (Default : 0)</span>
+<span class="sd">        flat_exptime : int, default: 10</span>
+<span class="sd">            exptime for flats (Default : 10)</span>
+<span class="sd">        take_flats : str, optional</span>
+<span class="sd">            when to take flats. Options include</span>
+<span class="sd">                &#39;before&#39; : before obs of target</span>
+<span class="sd">                &#39;between&#39; : between iterations</span>
+<span class="sd">                &#39;after&#39; : after obs of target</span>
+<span class="sd">                &#39;all&#39; : before, after, and between iterations</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;n_darks&quot;</span><span class="p">:</span> <span class="n">n_darks</span><span class="p">,</span>
+            <span class="s2">&quot;dark_exptime&quot;</span><span class="p">:</span> <span class="n">dark_exptime</span><span class="p">,</span>
+            <span class="s2">&quot;n_flats&quot;</span><span class="p">:</span> <span class="n">n_flats</span><span class="p">,</span>
+            <span class="s2">&quot;flat_exptime&quot;</span><span class="p">:</span> <span class="n">flat_exptime</span><span class="p">,</span>
+            <span class="s2">&quot;take_darks&quot;</span><span class="p">:</span> <span class="n">take_darks</span><span class="p">,</span>
+            <span class="s2">&quot;take_flats&quot;</span><span class="p">:</span> <span class="n">take_flats</span><span class="p">,</span>
+        <span class="p">}</span></div>
+
+<div class="viewcode-block" id="Observation.configure_standards"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.Observation.configure_standards">[docs]</a>    <span class="k">def</span> <span class="nf">configure_standards</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">use</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;nearest&quot;</span><span class="p">,</span>  <span class="c1"># use nearest standard star</span>
+        <span class="n">when</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;after&quot;</span><span class="p">,</span>  <span class="c1"># when to take standards</span>
+        <span class="n">n_standards</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># number of exposures</span>
+        <span class="n">exptime</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span>  <span class="c1"># exptime in seconds</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Configure the capturing of standard star images for calibration.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        use : str, default: &#39;nearest&#39;</span>
+<span class="sd">            which standard star(s) to use. Options include</span>
+<span class="sd">                `&#39;nearest&#39;` : use the standard in the list nearest to the target on-sky\n</span>
+<span class="sd">                `&#39;&lt;name&gt;&#39;` : a specific star name as present in the starlist.</span>
+<span class="sd">            (Default : &#39;nearest&#39;)</span>
+<span class="sd">        when : str, default: &#39;after&#39;</span>
+<span class="sd">            when to take standard star exposures. Options include</span>
+<span class="sd">                `&#39;before&#39;` : before observations of the target \n</span>
+<span class="sd">                `&#39;between&#39;` : between iterations on the target \n</span>
+<span class="sd">                `&#39;after&#39;` : after the target has been observed \n</span>
+<span class="sd">                `&#39;all&#39;` : before, between, and after iterations.</span>
+<span class="sd">        n_standards : int, default: 0</span>
+<span class="sd">            how many iterations to take on the standard star. (Default : 0)</span>
+<span class="sd">        exptime : int, default: 60</span>
+<span class="sd">            exposure time (in seconds) for the standard star observations. (Default : 60)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;use&quot;</span><span class="p">:</span> <span class="n">use</span><span class="p">,</span>
+            <span class="s2">&quot;when&quot;</span><span class="p">:</span> <span class="n">when</span><span class="p">,</span>
+            <span class="s2">&quot;n_standards&quot;</span><span class="p">:</span> <span class="n">n_standards</span><span class="p">,</span>
+            <span class="s2">&quot;exptime&quot;</span><span class="p">:</span> <span class="n">exptime</span><span class="p">,</span>
+        <span class="p">}</span></div>
+
+<div class="viewcode-block" id="Observation.construct_observing_plan"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.Observation.construct_observing_plan">[docs]</a>    <span class="k">def</span> <span class="nf">construct_observing_plan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="s2">&quot;today&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Based on all selected options, determine how observations of this</span>
+<span class="sd">        target should be carried out.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        date: str, default: &#39;today&#39;</span>
+<span class="sd">            date for which to construct plan. Format YYYY-MM-DD or &#39;today&#39;.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        obs_plan: list</span>
+<span class="sd">            A simple list containing mini dictionaries with observing params (ultimately the same info as the dataframe below).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Setup default configurations if not done by user</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;calibration_dict&quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">configure_calibrations</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;standards_dict&quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">configure_standards</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;wait_until&quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">configure_observation</span><span class="p">()</span>
+
+        <span class="c1"># Check timing of target rises and sets, etc.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_observing_timings</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+        <span class="c1"># establish stuff that should happen before, between, and after obs</span>
+        <span class="c1"># Check for needed flats first (they need flips so)</span>
+        <span class="n">obs_plan</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;take_flats&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;before&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">]:</span>
+            <span class="n">nflats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;n_flats&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">nflats</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">exptime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;flat_exptime&quot;</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nflats</span><span class="p">):</span>
+                    <span class="n">obs_plan</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;flat&quot;</span><span class="p">,</span> <span class="s2">&quot;exptime&quot;</span><span class="p">:</span> <span class="n">exptime</span><span class="p">})</span>
+        <span class="c1"># Check if darks should be taken before</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;take_darks&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;before&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">]:</span>
+            <span class="n">ndarks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;n_darks&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">ndarks</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">exptime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;dark_exptime&quot;</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndarks</span><span class="p">):</span>
+                    <span class="n">obs_plan</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;dark&quot;</span><span class="p">,</span> <span class="s2">&quot;exptime&quot;</span><span class="p">:</span> <span class="n">exptime</span><span class="p">})</span>
+        <span class="c1"># Check if a focus run is called for</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_focus</span><span class="p">:</span>
+            <span class="n">obs_plan</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;focus&quot;</span><span class="p">})</span>
+
+        <span class="c1"># Check if standard star should be taken before</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span><span class="p">[</span><span class="s2">&quot;when&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;before&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span><span class="p">[</span><span class="s2">&quot;n_standards&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">exptime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span><span class="p">[</span><span class="s2">&quot;exptime&quot;</span><span class="p">]</span>
+                <span class="n">n_standards</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span><span class="p">[</span><span class="s2">&quot;n_standards&quot;</span><span class="p">]</span>
+                <span class="n">use</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span><span class="p">[</span><span class="s2">&quot;use&quot;</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_standards</span><span class="p">):</span>
+                    <span class="n">obs_plan</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                        <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;standard&quot;</span><span class="p">,</span> <span class="s2">&quot;exptime&quot;</span><span class="p">:</span> <span class="n">exptime</span><span class="p">,</span> <span class="s2">&quot;use&quot;</span><span class="p">:</span> <span class="n">use</span><span class="p">}</span>
+                    <span class="p">)</span>
+
+        <span class="c1"># Now move on to the target observations</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iterations</span><span class="p">):</span>
+            <span class="n">obs_plan</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;science&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="s2">&quot;exptime&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">exptime</span><span class="p">}</span>
+            <span class="p">)</span>
+            <span class="n">obs_plan</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;calibration&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
+                    <span class="s2">&quot;exptime&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">off_band_exptime</span><span class="p">,</span>
+                    <span class="s2">&quot;n&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_cals</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+            <span class="c1"># Check for cals between</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iterations</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;take_flats&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;between&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">]:</span>
+                    <span class="n">nflats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;n_flats&quot;</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">nflats</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">exptime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;flat_exptime&quot;</span><span class="p">]</span>
+                        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nflats</span><span class="p">):</span>
+                            <span class="n">obs_plan</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;flat&quot;</span><span class="p">,</span> <span class="s2">&quot;exptime&quot;</span><span class="p">:</span> <span class="n">exptime</span><span class="p">})</span>
+                <span class="c1"># Check if darks should be taken between</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;take_darks&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;between&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">]:</span>
+                    <span class="n">ndarks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;n_darks&quot;</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">ndarks</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">exptime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;dark_exptime&quot;</span><span class="p">]</span>
+                        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndarks</span><span class="p">):</span>
+                            <span class="n">obs_plan</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;dark&quot;</span><span class="p">,</span> <span class="s2">&quot;exptime&quot;</span><span class="p">:</span> <span class="n">exptime</span><span class="p">})</span>
+                <span class="c1"># Check if standard star should be taken between</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span><span class="p">[</span><span class="s2">&quot;when&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;between&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span><span class="p">[</span><span class="s2">&quot;n_standards&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">exptime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span><span class="p">[</span><span class="s2">&quot;exptime&quot;</span><span class="p">]</span>
+                        <span class="n">n_standards</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span><span class="p">[</span><span class="s2">&quot;n_standards&quot;</span><span class="p">]</span>
+                        <span class="n">use</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span><span class="p">[</span><span class="s2">&quot;use&quot;</span><span class="p">]</span>
+                        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_standards</span><span class="p">):</span>
+                            <span class="n">obs_plan</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                                <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;standard&quot;</span><span class="p">,</span> <span class="s2">&quot;exptime&quot;</span><span class="p">:</span> <span class="n">exptime</span><span class="p">,</span> <span class="s2">&quot;use&quot;</span><span class="p">:</span> <span class="n">use</span><span class="p">}</span>
+                            <span class="p">)</span>
+
+        <span class="c1"># Check what to do after observing target</span>
+        <span class="c1"># Check if flats should be taken after</span>
+        <span class="c1"># Check if standard star should be taken after</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span><span class="p">[</span><span class="s2">&quot;when&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;after&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span><span class="p">[</span><span class="s2">&quot;n_standards&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">exptime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span><span class="p">[</span><span class="s2">&quot;exptime&quot;</span><span class="p">]</span>
+                <span class="n">n_standards</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span><span class="p">[</span><span class="s2">&quot;n_standards&quot;</span><span class="p">]</span>
+                <span class="n">use</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">standards_dict</span><span class="p">[</span><span class="s2">&quot;use&quot;</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_standards</span><span class="p">):</span>
+                    <span class="n">obs_plan</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                        <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;standard&quot;</span><span class="p">,</span> <span class="s2">&quot;exptime&quot;</span><span class="p">:</span> <span class="n">exptime</span><span class="p">,</span> <span class="s2">&quot;use&quot;</span><span class="p">:</span> <span class="n">use</span><span class="p">}</span>
+                    <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;take_flats&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;after&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">]:</span>
+            <span class="n">nflats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;n_flats&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">nflats</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">exptime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;flat_exptime&quot;</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nflats</span><span class="p">):</span>
+                    <span class="n">obs_plan</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;flat&quot;</span><span class="p">,</span> <span class="s2">&quot;exptime&quot;</span><span class="p">:</span> <span class="n">exptime</span><span class="p">})</span>
+        <span class="c1"># Check if darks should be taken after</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;take_darks&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;after&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">]:</span>
+            <span class="n">ndarks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;n_darks&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">ndarks</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">exptime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calibration_dict</span><span class="p">[</span><span class="s2">&quot;dark_exptime&quot;</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndarks</span><span class="p">):</span>
+                    <span class="n">obs_plan</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;dark&quot;</span><span class="p">,</span> <span class="s2">&quot;exptime&quot;</span><span class="p">:</span> <span class="n">exptime</span><span class="p">})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observing_plan</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">obs_plan</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observing_plan</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="mi">1</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">else</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">observing_plan</span><span class="o">.</span><span class="n">n</span>
+        <span class="p">]</span>
+        <span class="c1"># Calculate total exposure time on target</span>
+        <span class="n">total_exptime</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">obs_plan</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;standard&quot;</span><span class="p">,</span> <span class="s2">&quot;science&quot;</span><span class="p">,</span> <span class="s2">&quot;flat&quot;</span><span class="p">,</span> <span class="s2">&quot;dark&quot;</span><span class="p">]:</span>
+                <span class="n">total_exptime</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="s2">&quot;exptime&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_exptime_hours</span> <span class="o">=</span> <span class="n">total_exptime</span> <span class="o">/</span> <span class="mf">3600.0</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">total_exptime_hours</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_uptime</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">TargetUptimeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Minimum exposure time on </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">total_exptime_hours</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> hrs) is longer than its up-time (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">target_uptime</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> hrs).&quot;</span>
+            <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">obs_plan</span> <span class="o">=</span> <span class="n">obs_plan</span>
+        <span class="k">return</span> <span class="n">obs_plan</span></div>
+
+    <span class="k">def</span> <span class="nf">check_observing_timings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Checks to ensure the requested observation start times do not conflict with logic.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Establish when to start observations.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">wait_until</span> <span class="o">==</span> <span class="s2">&quot;sunset&quot;</span><span class="p">:</span>
+            <span class="n">sunset</span> <span class="o">=</span> <span class="n">get_sunset</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">)</span>
+            <span class="n">target_rise</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_target_rise</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">sunset</span> <span class="o">&lt;</span> <span class="n">target_rise</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">TargetNotUpError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;You selected a sunset start for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="si">}</span><span class="s2">, but </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2"> is not above minimum altitude (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">min_altitude</span><span class="si">}</span><span class="s2"> deg) at sunset. </span><span class="se">\n</span><span class="s2"> You probably want None or target_rise&quot;</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">OBS_START</span> <span class="o">=</span> <span class="n">sunset</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">wait_until</span> <span class="o">==</span> <span class="s2">&quot;moonset&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">OBS_START</span> <span class="o">=</span> <span class="n">get_moonset</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">date</span> <span class="o">==</span> <span class="s2">&quot;today&quot;</span><span class="p">:</span>
+                <span class="n">day</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">day</span>
+                <span class="n">time_compare</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">day</span><span class="si">}</span><span class="s2"> 04:00:00&quot;</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">])</span>
+                <span class="n">dt</span> <span class="o">=</span> <span class="n">dt_date</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">time_compare</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span><span class="si">}</span><span class="s2"> 04:00:00&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">OBS_START</span> <span class="o">&gt;</span> <span class="n">time_compare</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">EndOfNightError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Selected Start Time for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="si">}</span><span class="s2"> as moonset but moonset is after 4 am local.&quot;</span>
+                <span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">wait_until</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">wait_until</span> <span class="o">=</span> <span class="s2">&quot;None (Now/after previous)&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">OBS_START</span> <span class="o">=</span> <span class="s2">&quot;N/A&quot;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">wait_until</span> <span class="o">==</span> <span class="s2">&quot;target_rise&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">OBS_START</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_target_rise</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">date</span> <span class="o">==</span> <span class="s2">&quot;today&quot;</span><span class="p">:</span>
+                <span class="n">day</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">day</span>
+                <span class="n">time_compare</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">day</span><span class="si">}</span><span class="s2"> 04:00:00&quot;</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">])</span>
+                <span class="n">dt</span> <span class="o">=</span> <span class="n">dt_date</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">time_compare</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span><span class="si">}</span><span class="s2"> 04:00:00&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">OBS_START</span> <span class="o">&gt;</span> <span class="n">time_compare</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">EndOfNightError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="si">}</span><span class="s2"> appears to rise above minimum altitude (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">min_altitude</span><span class="si">}</span><span class="s2"> deg) after 4 am local...&quot;</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># assume exact time is given</span>
+            <span class="n">start_hour</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wait_until</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">date</span> <span class="o">==</span> <span class="s2">&quot;today&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">start_hour</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+                    <span class="n">day</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">day</span>
+                    <span class="n">in_date</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;%Y-%m-</span><span class="si">{</span><span class="n">day</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">wait_until</span>
+                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">in_date</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">wait_until</span>
+                    <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">start_hour</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+                    <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+                    <span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+                    <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">])</span>
+                    <span class="n">dt</span> <span class="o">=</span> <span class="n">dt_date</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="n">in_date</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">wait_until</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">in_date</span> <span class="o">=</span> <span class="n">date</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">wait_until</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">OBS_START</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">in_date</span><span class="p">)</span>
+            <span class="n">sunset</span> <span class="o">=</span> <span class="n">get_sunset</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">)</span>
+            <span class="n">sunrise</span> <span class="o">=</span> <span class="n">get_sunrise</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">)</span>
+            <span class="n">moonset</span> <span class="o">=</span> <span class="n">get_moonset</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">OBS_START</span> <span class="o">&lt;</span> <span class="n">sunset</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">DayTimeError</span><span class="p">(</span><span class="s2">&quot;Start time is before sunset.&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">OBS_START</span> <span class="o">&gt;</span> <span class="n">sunrise</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">DayTimeError</span><span class="p">(</span><span class="s2">&quot;Start time is after sunrise.&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">OBS_START</span> <span class="o">&lt;</span> <span class="n">moonset</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WARNING: START TIME is before moon sets. (allowing...)&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_uptime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_target_set</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_target_rise</span><span class="p">(</span>
+            <span class="n">date</span><span class="o">=</span><span class="n">date</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_uptime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_uptime</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">()</span><span class="o">.</span><span class="n">seconds</span> <span class="o">/</span> <span class="mi">3600</span>
+
+<div class="viewcode-block" id="Observation.view_observing_plan"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.Observation.view_observing_plan">[docs]</a>    <span class="k">def</span> <span class="nf">view_observing_plan</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">sysout</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">write_to_log</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">logfile</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Takes an observing plan list and prints it nicely</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        sysout: bool, default: True</span>
+<span class="sd">            whether to print the observing plan to stdout</span>
+<span class="sd">        write_to_log: bool, default: False</span>
+<span class="sd">            whether to write to a logfile (generally for during observations)</span>
+<span class="sd">        logfile: str, default: None</span>
+<span class="sd">            if write_to_log is True, the logfile to write to must be given here.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;observing_plan&quot;</span><span class="p">):</span>
+            <span class="n">observing_plan</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_observing_plan</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">observing_plan</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obs_plan</span>
+        <span class="n">total_exptime</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">total_exps</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">=================== OBSERVING PLAN FOR </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="si">}</span><span class="s2"> ===================</span>
+<span class="s2">Summary of user-selected configurations for this observing run. Here</span>
+<span class="s2">are the frames that will be captured....</span>
+<span class="s2">====================================================================</span>
+<span class="s2">Observing was set to start at </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">wait_until</span><span class="si">}</span><span class="s2">, which today is at </span>
+
+<span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">OBS_START</span><span class="si">}</span><span class="s2"> local time. </span>
+
+<span class="s2">For Reference, sunset is at </span><span class="si">{</span><span class="n">get_sunset</span><span class="p">()</span><span class="si">}</span><span class="s2"> local time today and</span>
+<span class="s2">               moonset is at </span><span class="si">{</span><span class="n">get_moonset</span><span class="p">()</span><span class="si">}</span><span class="s2"> local time today.</span>
+
+<span class="s2">Science Exposures will be taken in the following dither pattern :</span>
+<span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dither_pattern</span><span class="si">}</span><span class="s2"> </span>
+<span class="s2">on a </span>
+
+<span class="s2">    1   2   3</span>
+
+<span class="s2">    4   5   6</span>
+
+<span class="s2">    7   8   9</span>
+
+<span class="s2">grid. Because the number of science iterations is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">iterations</span><span class="si">}</span><span class="s2">,</span>
+<span class="s2">positions </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dither_pattern</span><span class="p">[</span><span class="mi">0</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">iterations</span><span class="p">]</span><span class="si">}</span><span class="s2"> will be observed.</span>
+
+<span class="s2">The dither angle between pointings is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dither_angle</span><span class="si">}</span><span class="s2"> arcminutes.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;ha_tilt&quot;</span><span class="p">):</span>
+            <span class="n">out</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">The input tilt angles are</span>
+<span class="s2">    H-alpha : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ha_tilt</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">    [OIII] : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">oiii_tilt</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">            &quot;&quot;&quot;</span>
+        <span class="n">out</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+
+
+<span class="s2">====================================================================</span>
+<span class="s2">Framelist of proposed observations</span>
+<span class="s2">====================================================================</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">observing_plan</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;standard&quot;</span><span class="p">:</span>
+                <span class="n">add</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> frame with exptime : </span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;exptime&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> s using </span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;use&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> standard star</span>
+<span class="s2">&quot;&quot;&quot;</span>
+                <span class="n">out</span> <span class="o">+=</span> <span class="n">add</span>
+                <span class="n">total_exptime</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="s2">&quot;exptime&quot;</span><span class="p">])</span>
+                <span class="n">total_exps</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">i</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;calibration&quot;</span><span class="p">:</span>
+                <span class="n">add</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">. Co-expose of </span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> FRAME(s) with EXPTIME : </span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;exptime&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> s</span>
+<span class="s2">&quot;&quot;&quot;</span>
+                <span class="n">out</span> <span class="o">+=</span> <span class="n">add</span>
+                <span class="c1"># total_exptime += int(i[&#39;exptime&#39;])</span>
+                <span class="n">total_exps</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="n">i</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;focus&quot;</span><span class="p">:</span>
+                <span class="n">add</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;-------------------------------------</span>
+<span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">. Focus Run </span>
+<span class="s2">-------------------------------------</span>
+<span class="s2">&quot;&quot;&quot;</span>
+                <span class="n">out</span> <span class="o">+=</span> <span class="n">add</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">add</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> frame with exptime : </span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;exptime&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> s </span>
+<span class="s2">&quot;&quot;&quot;</span>
+                <span class="n">out</span> <span class="o">+=</span> <span class="n">add</span>
+                <span class="n">total_exptime</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="s2">&quot;exptime&quot;</span><span class="p">])</span>
+                <span class="n">total_exps</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">hours</span> <span class="o">=</span> <span class="n">total_exptime</span> <span class="o">/</span> <span class="mi">3600</span>
+        <span class="n">out</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\n</span><span class="s2"></span>
+<span class="s2">========================================================================</span>
+<span class="s2">Total Exposure Time (on sky) : </span><span class="si">{</span><span class="n">total_exptime</span><span class="si">}</span><span class="s2"> seconds (</span><span class="si">{</span><span class="n">hours</span> <span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> hours)</span>
+<span class="s2">Total Number of (non focus) Exposures : </span><span class="si">{</span><span class="n">total_exps</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">[does not include focus runs]</span>
+<span class="s2">========================================================================</span>
+<span class="s2">&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">write_to_log</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">logfile</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sysout</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+        <span class="k">return</span></div>
+
+<div class="viewcode-block" id="Observation.test_observing_plan"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.Observation.test_observing_plan">[docs]</a>    <span class="k">def</span> <span class="nf">test_observing_plan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Run a series of tests on the proposed observing plan</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># check if target is up at proposed start time</span>
+
+        <span class="c1"># check if target will set before end of iterations</span>
+
+        <span class="k">pass</span></div></div>
+
+
+<div class="viewcode-block" id="get_sunset"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.get_sunset">[docs]</a><span class="k">def</span> <span class="nf">get_sunset</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;today&quot;</span><span class="p">,</span> <span class="n">utcoffset</span><span class="o">=-</span><span class="mi">6</span><span class="p">,</span> <span class="n">return_local</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retrieve the time of sunset at NMS on a certain date.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    date: str, default: &#39;today&#39;</span>
+<span class="sd">        date for which to retrieve sunset. If not &#39;today&#39;, a string of the format YYYY-MM-DD.</span>
+<span class="sd">    utcoffset: int, default: -6</span>
+<span class="sd">        offset between UTC and NMS. Usually -6 but might change during daylights savings</span>
+<span class="sd">    return_local: bool, default: True</span>
+<span class="sd">        return the time in local time. If False, time is returned in UTC</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    sunset_time: astropy.time.Time</span>
+<span class="sd">        time of sunset in either UTC or local as requested</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">obsloc</span> <span class="o">=</span> <span class="n">EarthLocation</span><span class="p">(</span>
+        <span class="n">lon</span><span class="o">=-</span><span class="mf">105.5302</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mf">32.9024</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">2225</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">date</span> <span class="o">==</span> <span class="s2">&quot;today&quot;</span><span class="p">:</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="n">dt_string</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dt_string</span> <span class="o">=</span> <span class="n">date</span>
+    <span class="n">midnight</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dt_string</span><span class="si">}</span><span class="s2"> 23:59:59&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">utcoffset</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+    <span class="n">delta_midnight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+    <span class="n">obs_times</span> <span class="o">=</span> <span class="n">midnight</span> <span class="o">+</span> <span class="n">delta_midnight</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">AltAz</span><span class="p">(</span><span class="n">obstime</span><span class="o">=</span><span class="n">obs_times</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">obsloc</span><span class="p">)</span>
+    <span class="n">sun</span> <span class="o">=</span> <span class="n">get_sun</span><span class="p">(</span><span class="n">obs_times</span><span class="p">)</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+    <span class="n">sunset_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">sun</span><span class="o">.</span><span class="n">alt</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">return_local</span><span class="p">:</span>
+        <span class="n">sunset_time</span> <span class="o">=</span> <span class="n">obs_times</span><span class="p">[</span><span class="n">sunset_ind</span><span class="p">]</span> <span class="o">+</span> <span class="n">utcoffset</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+        <span class="k">return</span> <span class="n">sunset_time</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sunset_utc</span> <span class="o">=</span> <span class="n">obs_times</span><span class="p">[</span><span class="n">sunset_ind</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">sunset_utc</span></div>
+
+
+<div class="viewcode-block" id="get_sunrise"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.get_sunrise">[docs]</a><span class="k">def</span> <span class="nf">get_sunrise</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;today&quot;</span><span class="p">,</span> <span class="n">utcoffset</span><span class="o">=-</span><span class="mi">6</span><span class="p">,</span> <span class="n">return_local</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retrieve the time of sunrise at NMS on a certain date.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    date: str, default: &#39;today&#39;</span>
+<span class="sd">        date for which to retrieve sunset. If not &#39;today&#39;, a string of the format YYYY-MM-DD.</span>
+<span class="sd">    utcoffset: int, default: -6</span>
+<span class="sd">        offset between UTC and NMS. Usually -6 but might change during daylights savings</span>
+<span class="sd">    return_local: bool, default: True</span>
+<span class="sd">        return the time in local time. If False, time is returned in UTC</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    sunset_time: astropy.time.Time</span>
+<span class="sd">        time of sunset in either UTC or local as requested</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">obsloc</span> <span class="o">=</span> <span class="n">EarthLocation</span><span class="p">(</span>
+        <span class="n">lon</span><span class="o">=-</span><span class="mf">105.5302</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mf">32.9024</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">2225</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">date</span> <span class="o">==</span> <span class="s2">&quot;today&quot;</span><span class="p">:</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="n">dt_string</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dt_string</span> <span class="o">=</span> <span class="n">date</span>
+    <span class="n">midnight</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dt_string</span><span class="si">}</span><span class="s2"> 23:59:59&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">utcoffset</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+    <span class="n">delta_midnight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+    <span class="n">obs_times</span> <span class="o">=</span> <span class="n">midnight</span> <span class="o">+</span> <span class="n">delta_midnight</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">AltAz</span><span class="p">(</span><span class="n">obstime</span><span class="o">=</span><span class="n">obs_times</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">obsloc</span><span class="p">)</span>
+    <span class="n">sun</span> <span class="o">=</span> <span class="n">get_sun</span><span class="p">(</span><span class="n">obs_times</span><span class="p">)</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+    <span class="n">sunrise_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">sun</span><span class="o">.</span><span class="n">alt</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">return_local</span><span class="p">:</span>
+        <span class="n">sunrise_time</span> <span class="o">=</span> <span class="n">obs_times</span><span class="p">[</span><span class="n">sunrise_ind</span><span class="p">]</span> <span class="o">+</span> <span class="n">utcoffset</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+        <span class="k">return</span> <span class="n">sunrise_time</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sunrise_utc</span> <span class="o">=</span> <span class="n">obs_times</span><span class="p">[</span><span class="n">sunrise_ind</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">sunrise_utc</span></div>
+
+
+<div class="viewcode-block" id="get_morning_twilight"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.get_morning_twilight">[docs]</a><span class="k">def</span> <span class="nf">get_morning_twilight</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;today&quot;</span><span class="p">,</span> <span class="n">utcoffset</span><span class="o">=-</span><span class="mi">6</span><span class="p">,</span> <span class="n">return_local</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retrieve the time of morning 18 degree twilight at NMS on a certain date.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    date: str, default: &#39;today&#39;</span>
+<span class="sd">        date for which to retrieve sunset. If not &#39;today&#39;, a string of the format YYYY-MM-DD.</span>
+<span class="sd">    utcoffset: int, default: -6</span>
+<span class="sd">        offset between UTC and NMS. Usually -6 but might change during daylights savings</span>
+<span class="sd">    return_local: bool, default: True</span>
+<span class="sd">        return the time in local time. If False, time is returned in UTC</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    sunset_time: astropy.time.Time</span>
+<span class="sd">        time of sunset in either UTC or local as requested</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">obsloc</span> <span class="o">=</span> <span class="n">EarthLocation</span><span class="p">(</span>
+        <span class="n">lon</span><span class="o">=-</span><span class="mf">105.5302</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mf">32.9024</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">2225</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">date</span> <span class="o">==</span> <span class="s2">&quot;today&quot;</span><span class="p">:</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="n">dt_string</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dt_string</span> <span class="o">=</span> <span class="n">date</span>
+    <span class="n">midnight</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dt_string</span><span class="si">}</span><span class="s2"> 23:59:59&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">utcoffset</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+    <span class="n">delta_midnight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+    <span class="n">obs_times</span> <span class="o">=</span> <span class="n">midnight</span> <span class="o">+</span> <span class="n">delta_midnight</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">AltAz</span><span class="p">(</span><span class="n">obstime</span><span class="o">=</span><span class="n">obs_times</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">obsloc</span><span class="p">)</span>
+    <span class="n">sun</span> <span class="o">=</span> <span class="n">get_sun</span><span class="p">(</span><span class="n">obs_times</span><span class="p">)</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+    <span class="n">twilight_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">sun</span><span class="o">.</span><span class="n">alt</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">18.0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">return_local</span><span class="p">:</span>
+        <span class="n">twilight_time</span> <span class="o">=</span> <span class="n">obs_times</span><span class="p">[</span><span class="n">twilight_ind</span><span class="p">]</span> <span class="o">+</span> <span class="n">utcoffset</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+        <span class="k">return</span> <span class="n">twilight_time</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">twilight_utc</span> <span class="o">=</span> <span class="n">obs_times</span><span class="p">[</span><span class="n">twilight_ind</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">twilight_utc</span></div>
+
+
+<div class="viewcode-block" id="get_moonset"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.get_moonset">[docs]</a><span class="k">def</span> <span class="nf">get_moonset</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;today&quot;</span><span class="p">,</span> <span class="n">utcoffset</span><span class="o">=-</span><span class="mi">6</span><span class="p">,</span> <span class="n">set_altitude</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">return_local</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retrieve the time of moonset at NMS on a certain date. More formally, the time</span>
+<span class="sd">    the moon drops below a certain altitude *after* sunset on that date.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    date: str, default: &#39;today&#39;</span>
+<span class="sd">        date for which to retrieve sunset. If not &#39;today&#39;, a string of the format YYYY-MM-DD.</span>
+<span class="sd">    utcoffset: int, default: -6</span>
+<span class="sd">        offset between UTC and NMS. Usually -6 but might change during daylights savings</span>
+<span class="sd">    set_altitude: float, default: 10</span>
+<span class="sd">        altitude in degrees at which to consider the moon &#39;set&#39;.</span>
+<span class="sd">    return_local: bool, default: True</span>
+<span class="sd">        return the time in local time. If False, time is returned in UTC</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    moonset_time: astropy.time.Time</span>
+<span class="sd">        time of moonset in either UTC or local as requested</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">obsloc</span> <span class="o">=</span> <span class="n">EarthLocation</span><span class="p">(</span>
+        <span class="n">lon</span><span class="o">=-</span><span class="mf">105.5302</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mf">32.9024</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">2225</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">date</span> <span class="o">==</span> <span class="s2">&quot;today&quot;</span><span class="p">:</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="n">dt_string</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dt_string</span> <span class="o">=</span> <span class="n">date</span>
+    <span class="n">midnight</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dt_string</span><span class="si">}</span><span class="s2"> 23:59:59&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">utcoffset</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+    <span class="n">delta_midnight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+    <span class="n">obs_times</span> <span class="o">=</span> <span class="n">midnight</span> <span class="o">+</span> <span class="n">delta_midnight</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">AltAz</span><span class="p">(</span><span class="n">obstime</span><span class="o">=</span><span class="n">obs_times</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">obsloc</span><span class="p">)</span>
+    <span class="n">sunset</span> <span class="o">=</span> <span class="n">get_sunset</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">)</span>
+    <span class="n">moon</span> <span class="o">=</span> <span class="n">get_moon</span><span class="p">(</span><span class="n">obs_times</span><span class="p">)</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+    <span class="n">moon_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">moon</span><span class="o">.</span><span class="n">alt</span> <span class="o">&gt;</span> <span class="n">set_altitude</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">obs_times</span> <span class="o">&gt;</span> <span class="n">sunset</span><span class="p">))[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">return_local</span><span class="p">:</span>
+        <span class="n">moonset_time</span> <span class="o">=</span> <span class="n">obs_times</span><span class="p">[</span><span class="n">moon_ind</span><span class="p">]</span> <span class="o">+</span> <span class="n">utcoffset</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+        <span class="k">return</span> <span class="n">moonset_time</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">moonset_utc</span> <span class="o">=</span> <span class="n">obs_times</span><span class="p">[</span><span class="n">moon_ind</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">moonset_utc</span></div>
+
+
+<div class="viewcode-block" id="get_moonrise"><a class="viewcode-back" href="../../../autoapi/dfobserve/observing/index.html#dfobserve.observing.get_moonrise">[docs]</a><span class="k">def</span> <span class="nf">get_moonrise</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;today&quot;</span><span class="p">,</span> <span class="n">utcoffset</span><span class="o">=-</span><span class="mi">6</span><span class="p">,</span> <span class="n">rise_altitude</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">return_local</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retrieve the time of moonrise at NMS on a certain date. More formally, the time</span>
+<span class="sd">    the moon rises above a certain altitude *after* sunset on that date.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    date: str, default: &#39;today&#39;</span>
+<span class="sd">        date for which to retrieve sunset. If not &#39;today&#39;, a string of the format YYYY-MM-DD.</span>
+<span class="sd">    utcoffset: int, default: -6</span>
+<span class="sd">        offset between UTC and NMS. Usually -6 but might change during daylights savings</span>
+<span class="sd">    rise_altitude: float, default: 10</span>
+<span class="sd">        altitude in degrees at which to consider the moon &#39;set&#39;.</span>
+<span class="sd">    return_local: bool, default: True</span>
+<span class="sd">        return the time in local time. If False, time is returned in UTC</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    moonrise_time: astropy.time.Time</span>
+<span class="sd">        time of moonrise in either UTC or local as requested</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">obsloc</span> <span class="o">=</span> <span class="n">EarthLocation</span><span class="p">(</span>
+        <span class="n">lon</span><span class="o">=-</span><span class="mf">105.5302</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mf">32.9024</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">2225</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">date</span> <span class="o">==</span> <span class="s2">&quot;today&quot;</span><span class="p">:</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="n">dt_string</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dt_string</span> <span class="o">=</span> <span class="n">date</span>
+    <span class="n">midnight</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dt_string</span><span class="si">}</span><span class="s2"> 23:59:59&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">utcoffset</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+    <span class="n">delta_midnight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+    <span class="n">obs_times</span> <span class="o">=</span> <span class="n">midnight</span> <span class="o">+</span> <span class="n">delta_midnight</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">AltAz</span><span class="p">(</span><span class="n">obstime</span><span class="o">=</span><span class="n">obs_times</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">obsloc</span><span class="p">)</span>
+    <span class="n">sunset</span> <span class="o">=</span> <span class="n">get_sunset</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">)</span>
+    <span class="n">moon</span> <span class="o">=</span> <span class="n">get_moon</span><span class="p">(</span><span class="n">obs_times</span><span class="p">)</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+    <span class="n">moon_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">moon</span><span class="o">.</span><span class="n">alt</span> <span class="o">&gt;</span> <span class="n">rise_altitude</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">obs_times</span> <span class="o">&gt;</span> <span class="n">sunset</span><span class="p">))[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">return_local</span><span class="p">:</span>
+        <span class="n">moonrise_time</span> <span class="o">=</span> <span class="n">obs_times</span><span class="p">[</span><span class="n">moon_ind</span><span class="p">]</span> <span class="o">+</span> <span class="n">utcoffset</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">hr</span>
+        <span class="k">return</span> <span class="n">moonrise_time</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">moonrise_utc</span> <span class="o">=</span> <span class="n">obs_times</span><span class="p">[</span><span class="n">moon_ind</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">moonrise_utc</span></div>
+</pre></div>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Imad Pasha<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

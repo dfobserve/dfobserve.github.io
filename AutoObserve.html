@@ -1,0 +1,695 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The AutoObserve Class &#8212; DFObserve Manual</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="QuickObserve" href="QuickObserve.html" />
+    <link rel="prev" title="The Observation Class" href="Observation.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">DFObserve Manual</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    DFObserve Guide
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Manual
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Observation.html">
+   The Observation Class
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   The AutoObserve Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="QuickObserve.html">
+   QuickObserve
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Webserver.html">
+   Communicating through the Webserver
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="WebRequestSummary.html">
+   Reponses from the Webserver
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Utilities.html">
+   Utilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CLI.html">
+   Command Line Interface
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="api.html">
+   API documentation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="_autosummary/dfobserve.html">
+     dfobserve
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/dfobserve.checks.html">
+       dfobserve.checks
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.checks.check_cameras.html">
+         dfobserve.checks.check_cameras
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.checks.check_dragonfly.html">
+         dfobserve.checks.check_dragonfly
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.checks.check_filters.html">
+         dfobserve.checks.check_filters
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.checks.check_focusers.html">
+         dfobserve.checks.check_focusers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.checks.check_mount.html">
+         dfobserve.checks.check_mount
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/dfobserve.exceptions.html">
+       dfobserve.exceptions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.exceptions.exceptions.html">
+         dfobserve.exceptions.exceptions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/dfobserve.logging.html">
+       dfobserve.logging
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.logging.logger.html">
+         dfobserve.logging.logger
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/dfobserve.observing.html">
+       dfobserve.observing
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.observing.AutoObserve.html">
+         dfobserve.observing.AutoObserve
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.observing.Observation.html">
+         dfobserve.observing.Observation
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/dfobserve.utils.html">
+       dfobserve.utils
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.CameraUtils.html">
+         dfobserve.utils.CameraUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.FilterTilterUtils.html">
+         dfobserve.utils.FilterTilterUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.FlipFlatUtils.html">
+         dfobserve.utils.FlipFlatUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.FocuserUtils.html">
+         dfobserve.utils.FocuserUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.HardwareUtils.html">
+         dfobserve.utils.HardwareUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.MountUtils.html">
+         dfobserve.utils.MountUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.NMS_utils.html">
+         dfobserve.utils.NMS_utils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.NetworkUtils.html">
+         dfobserve.utils.NetworkUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.SkyXUtils.html">
+         dfobserve.utils.SkyXUtils
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/dfobserve.webserver.html">
+       dfobserve.webserver
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.webserver.WebRequests.html">
+         dfobserve.webserver.WebRequests
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/AutoObserve.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/AutoObserve.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The AutoObserve Class</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="the-autoobserve-class">
+<h1>The AutoObserve Class<a class="headerlink" href="#the-autoobserve-class" title="Permalink to this headline">#</a></h1>
+<p>Now that we have <code class="docutils literal notranslate"><span class="pre">Observation</span></code>s ready to go, we can move on to setting up an <code class="docutils literal notranslate"><span class="pre">AutoObserve</span></code> (which can happen in the same script, below target creation. To remind ourselves, here’s all the code to setup the <code class="docutils literal notranslate"><span class="pre">m82</span></code> Observation from before:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dfobserve.observing</span> <span class="kn">import</span> <span class="n">Observation</span>
+<span class="n">m82</span> <span class="o">=</span> <span class="n">Observation</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="s1">&#39;M82&#39;</span><span class="p">,</span>
+                  <span class="n">exptime</span><span class="o">=</span><span class="mi">3600</span><span class="p">,</span>
+                  <span class="n">iterations</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                  <span class="n">do_focus</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                  <span class="n">min_altitude</span><span class="o">=</span><span class="mi">35</span><span class="p">)</span>
+<span class="n">m82</span><span class="o">.</span><span class="n">configure_observation</span><span class="p">(</span><span class="n">wait_until</span><span class="o">=</span><span class="s1">&#39;target_rise&#39;</span><span class="p">,</span>
+                    <span class="n">dither_angle</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="c1"># dither angle from target center</span>
+                    <span class="n">dither_pattern</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="c1"># dither pattern on grid</span>
+                    <span class="n">randomize_dithers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1">#choose random dither pattern</span>
+                    <span class="n">off_band_exptime</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="c1"># 20 sec exposures for the off bands</span>
+                    <span class="n">off_band_throughout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">m82</span><span class="o">.</span><span class="n">configure_calibrations</span><span class="p">(</span><span class="n">n_darks</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                            <span class="n">dark_exptime</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+                            <span class="n">take_darks</span><span class="o">=</span><span class="s1">&#39;after&#39;</span><span class="p">,</span>
+                            <span class="n">n_flats</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                            <span class="n">flat_exptime</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+                            <span class="n">take_flats</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">m82</span><span class="o">.</span><span class="n">configure_standards</span><span class="p">(</span><span class="n">use</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span>
+                        <span class="n">n_standards</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                        <span class="n">when</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">m82</span><span class="o">.</span><span class="n">set_tilts</span><span class="p">(</span><span class="s1">&#39;halpha&#39;</span><span class="p">,</span><span class="mf">14.5</span><span class="p">)</span>
+<span class="n">m82</span><span class="o">.</span><span class="n">set_tilts</span><span class="p">(</span><span class="s1">&#39;oiii&#39;</span><span class="p">,</span><span class="mf">12.6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s get going with <code class="docutils literal notranslate"><span class="pre">AutoObserve</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dfobserve.observing</span> <span class="kn">import</span> <span class="n">AutoObserve</span>
+
+<span class="n">targetlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">m82</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For now, we only have 1 target, but at this stage, we’d normally compile our targets (<code class="docutils literal notranslate"><span class="pre">Observation</span></code> objects) into a list as shown. We’ll now feed this into <code class="docutils literal notranslate"><span class="pre">AutoObserve</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obs</span> <span class="o">=</span> <span class="n">AutoObserve</span><span class="p">(</span><span class="n">targetlist</span><span class="p">,</span>
+                  <span class="n">guide</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                  <span class="n">save_log_to</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span>
+                  <span class="n">data_dir_on_pis</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Global Logfile for this run will be saved to ./2022-04-07_ObservingLog.log
+CompletedProcess(args=&#39;python3 C:/Dragonfly/Programs/MountPisOnPC.py&#39;, returncode=2, stdout=b&#39;&#39;, stderr=b&quot;python3: can&#39;t open file &#39;C:/Dragonfly/Programs/MountPisOnPC.py&#39;: [Errno 2] No such file or directory\n&quot;)
+Setting path to /data/2022-04-07 on each pi
+CompletedProcess(args=&quot;python3 C:/Dragonfly/Programs/SendWebRequestToArray.py &#39;ls -ltr  /data | tail -n 1&#39;&quot;, returncode=2, stdout=b&#39;&#39;, stderr=b&quot;python3: can&#39;t open file &#39;C:/Dragonfly/Programs/SendWebRequestToArray.py&#39;: [Errno 2] No such file or directory\n&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the bit above, we get a note that the logfile will be saved in the current directory (since we asked), with the date. We also get some errors trying to mount the pis on the control pc…. because I’m running this at home, not on the control pc. Let’s not worry about that!</p>
+<p>With this set up, all we need to do is run</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obs</span><span class="o">.</span><span class="n">observe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we’re off to the races! I obviously won’t run that here at home. This bit will first iterate over the target list, obtain each target’s observing plan, and then execute it. It also handles all needed slewing, checking if the dome is open, starting tracking/guiding, tilting the filters for each target, all that good stuff.</p>
+<p>Right now, it is in a “dumb” state of not having bailouts for things like sunrise, but I’ll be adding those things in very shortly.</p>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>That’s it for this! But there’s a few more major pieces of the code base that are worth knowing about, and we’ll discuss that next.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Observation.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">The Observation Class</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="QuickObserve.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">QuickObserve</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Imad Pasha<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

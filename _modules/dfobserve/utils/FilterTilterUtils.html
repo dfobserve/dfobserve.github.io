@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dfobserve.utils.FilterTilterUtils &#8212; DFObserve Manual</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">DFObserve Manual</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   DFObserve Guide
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Manual
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Observation.html">
+   The Observation Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../AutoObserve.html">
+   The AutoObserve Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../QuickObserve.html">
+   QuickObserve
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Webserver.html">
+   Communicating through the Webserver
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../WebRequestSummary.html">
+   Reponses from the Webserver
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Utilities.html">
+   Utilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CLI.html">
+   Command Line Interface
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../api.html">
+   API documentation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../_autosummary/dfobserve.html">
+     dfobserve
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.checks.html">
+       dfobserve.checks
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.checks.check_cameras.html">
+         dfobserve.checks.check_cameras
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.checks.check_dragonfly.html">
+         dfobserve.checks.check_dragonfly
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.checks.check_filters.html">
+         dfobserve.checks.check_filters
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.checks.check_focusers.html">
+         dfobserve.checks.check_focusers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.checks.check_mount.html">
+         dfobserve.checks.check_mount
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.exceptions.html">
+       dfobserve.exceptions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.exceptions.exceptions.html">
+         dfobserve.exceptions.exceptions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.logging.html">
+       dfobserve.logging
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.logging.logger.html">
+         dfobserve.logging.logger
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.observing.html">
+       dfobserve.observing
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.observing.AutoObserve.html">
+         dfobserve.observing.AutoObserve
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.observing.Observation.html">
+         dfobserve.observing.Observation
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.utils.html">
+       dfobserve.utils
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.CameraUtils.html">
+         dfobserve.utils.CameraUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.FilterTilterUtils.html">
+         dfobserve.utils.FilterTilterUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.FlipFlatUtils.html">
+         dfobserve.utils.FlipFlatUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.HardwareUtils.html">
+         dfobserve.utils.HardwareUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.MountUtils.html">
+         dfobserve.utils.MountUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.NMS_utils.html">
+         dfobserve.utils.NMS_utils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.NetworkUtils.html">
+         dfobserve.utils.NetworkUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.SkyXUtils.html">
+         dfobserve.utils.SkyXUtils
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.webserver.html">
+       dfobserve.webserver
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.webserver.WebRequests.html">
+         dfobserve.webserver.WebRequests
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <h1>Source code for dfobserve.utils.FilterTilterUtils</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Utility functions for interacting with the filter tilters via the webserver </span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">dfobserve.utils.NetworkUtils</span> <span class="kn">import</span> <span class="n">get_status_df</span>
+<span class="kn">from</span> <span class="nn">dfobserve.webserver</span> <span class="kn">import</span> <span class="n">SendWebRequestNB</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">dfobserve.webserver</span> <span class="kn">import</span> <span class="n">WrapDF</span>
+
+
+<div class="viewcode-block" id="AllTiltScienceFilters"><a class="viewcode-back" href="../../../autoapi/dfobserve/utils/FilterTilterUtils/index.html#dfobserve.utils.FilterTilterUtils.AllTiltScienceFilters">[docs]</a><span class="k">def</span> <span class="nf">AllTiltScienceFilters</span><span class="p">(</span>
+    <span class="n">ha_tilt</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">oiii_tilt</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Tilt all filters of a given filter type to a specific value.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ha_tilt: float</span>
+<span class="sd">        amount to tilt Ha filters. Must be between -20 and 20</span>
+<span class="sd">    oiii_tilt: float</span>
+<span class="sd">        angle to tilt OIII filters. Must be between -20 and 20</span>
+<span class="sd">    debug: bool, default: False</span>
+<span class="sd">        debug flag for testing (executes a dryrun).</span>
+<span class="sd">    **kwargs: optional</span>
+<span class="sd">        kwargs recognized by SendWebRequestNB</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ha_command</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;device/filtertilter?command=set&amp;argument=</span><span class="si">{</span><span class="n">ha_tilt</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">oiii_command</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;device/filtertilter?command=set&amp;argument=</span><span class="si">{</span><span class="n">oiii_tilt</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">SendWebRequestNB</span><span class="p">(</span>
+            <span class="n">ha_command</span><span class="o">=</span><span class="n">ha_command</span><span class="p">,</span> <span class="n">oiii_command</span><span class="o">=</span><span class="n">oiii_command</span><span class="p">,</span> <span class="n">dryrun</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">SendWebRequestNB</span><span class="p">(</span>
+            <span class="n">ha_command</span><span class="o">=</span><span class="n">ha_command</span><span class="p">,</span> <span class="n">oiii_command</span><span class="o">=</span><span class="n">oiii_command</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span></div>
+
+
+<span class="k">def</span> <span class="nf">AllMoveFilters</span><span class="p">(</span><span class="n">ha_move</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">oiii_move</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Tilt all filters of a given filter type by a specific value.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ha_move: float</span>
+<span class="sd">        amount to tilt Ha filters. Must be between -20 and 20</span>
+<span class="sd">    oiii_move: float</span>
+<span class="sd">        angle to tilt OIII filters. Must be between -20 and 20</span>
+<span class="sd">    debug: bool, default: False</span>
+<span class="sd">        debug flag for testing (executes a dryrun).</span>
+<span class="sd">    **kwargs: optional</span>
+<span class="sd">        kwargs recognized by SendWebRequestNB</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ha_command</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;device/filtertilter?command=move&amp;argument=</span><span class="si">{</span><span class="n">ha_move</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">oiii_command</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;device/filtertilter?command=move&amp;argument=</span><span class="si">{</span><span class="n">oiii_move</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">SendWebRequestNB</span><span class="p">(</span>
+            <span class="n">ha_command</span><span class="o">=</span><span class="n">ha_command</span><span class="p">,</span> <span class="n">oiii_command</span><span class="o">=</span><span class="n">oiii_command</span><span class="p">,</span> <span class="n">dryrun</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">SendWebRequestNB</span><span class="p">(</span>
+            <span class="n">ha_command</span><span class="o">=</span><span class="n">ha_command</span><span class="p">,</span> <span class="n">oiii_command</span><span class="o">=</span><span class="n">oiii_command</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span>
+
+
+<div class="viewcode-block" id="TiltFiltersByType"><a class="viewcode-back" href="../../../autoapi/dfobserve/utils/FilterTilterUtils/index.html#dfobserve.utils.FilterTilterUtils.TiltFiltersByType">[docs]</a><span class="k">def</span> <span class="nf">TiltFiltersByType</span><span class="p">(</span><span class="n">filt_name</span><span class="p">,</span> <span class="n">tilt_angle</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="AllGetFilterTilts"><a class="viewcode-back" href="../../../autoapi/dfobserve/utils/FilterTilterUtils/index.html#dfobserve.utils.FilterTilterUtils.AllGetFilterTilts">[docs]</a><span class="k">def</span> <span class="nf">AllGetFilterTilts</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s2">&quot;science&quot;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Gets the tilts for all science filters</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    which: str, default: &#39;science&#39;</span>
+<span class="sd">        which filters to return tilts for. Only science ones *should* be needed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">command</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;device/filtertilter?command=get&quot;</span>
+    <span class="k">if</span> <span class="n">debug</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">SendWebRequestNB</span><span class="p">(</span><span class="n">ha_command</span><span class="o">=</span><span class="n">command</span><span class="p">,</span> <span class="n">oiii_command</span><span class="o">=</span><span class="n">command</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">debug</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">SendWebRequestNB</span><span class="p">(</span>
+            <span class="n">ha_command</span><span class="o">=</span><span class="n">command</span><span class="p">,</span> <span class="n">oiii_command</span><span class="o">=</span><span class="n">command</span><span class="p">,</span> <span class="n">dryrun</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span>
+
+    <span class="c1"># This is a summary object. Let&#39;s make a new WrapDF with just the params for FilterTilter</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Filter&quot;</span><span class="p">,</span> <span class="s2">&quot;Angle&quot;</span><span class="p">,</span> <span class="s2">&quot;RawAngle&quot;</span><span class="p">,</span> <span class="s2">&quot;ZeropointAngle&quot;</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+    <span class="n">sdf</span> <span class="o">=</span> <span class="n">get_status_df</span><span class="p">()</span>
+    <span class="n">halpha</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">sdf</span><span class="o">.</span><span class="n">Filter</span> <span class="o">==</span> <span class="s2">&quot;ha6647&quot;</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">])</span>
+    <span class="n">oiii</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">sdf</span><span class="o">.</span><span class="n">Filter</span> <span class="o">==</span> <span class="s2">&quot;oiii5071&quot;</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">])</span>
+    <span class="n">units</span> <span class="o">=</span> <span class="n">halpha</span> <span class="o">+</span> <span class="n">oiii</span>
+    <span class="n">unit_type</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;halpha6647&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">halpha</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;oiii5071&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">oiii</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filt</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">units</span><span class="p">,</span> <span class="n">unit_type</span><span class="p">):</span>
+        <span class="n">unit_obj</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">get_response_by_name</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">FilterTilter</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span>
+                <span class="s2">&quot;Filter&quot;</span><span class="p">:</span> <span class="n">filt</span><span class="p">,</span>
+                <span class="s2">&quot;Angle&quot;</span><span class="p">:</span> <span class="n">unit_obj</span><span class="o">.</span><span class="n">Angle</span><span class="p">,</span>
+                <span class="s2">&quot;RawAngle&quot;</span><span class="p">:</span> <span class="n">unit_obj</span><span class="o">.</span><span class="n">RawAngle</span><span class="p">,</span>
+                <span class="s2">&quot;ZeropointAngle&quot;</span><span class="p">:</span> <span class="n">unit_obj</span><span class="o">.</span><span class="n">ZeropointAngle</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<span class="k">def</span> <span class="nf">AllCheckFilterTilts</span><span class="p">(</span>
+    <span class="n">ha_tilt</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">oiii_tilt</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">tol</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Query the filter tilters and obtain the current tilt. Check that tilts are within specified tolerance.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ha_tilt: float</span>
+<span class="sd">        expected tilt for Halpha</span>
+<span class="sd">    oiii_tilt: float</span>
+<span class="sd">        expected tilt for [OIII]</span>
+<span class="sd">    tol: float, default: 0.3</span>
+<span class="sd">        tolerance between true and expected tilt to return an all OK.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    res: bool</span>
+<span class="sd">        True if all filters in tolerance, False if not</span>
+<span class="sd">    bad: list</span>
+<span class="sd">        List of any filters that returned bad tilts</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">command</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;device/filtertilter?command=get&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">SendWebRequestNB</span><span class="p">(</span>
+        <span class="n">ha_command</span><span class="o">=</span><span class="n">command</span><span class="p">,</span> <span class="n">oiii_command</span><span class="o">=</span><span class="n">command</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span>  <span class="c1"># Summary obj</span>
+    <span class="n">sdf</span> <span class="o">=</span> <span class="n">get_status_df</span><span class="p">()</span>
+    <span class="n">halpha</span> <span class="o">=</span> <span class="n">sdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">sdf</span><span class="o">.</span><span class="n">Filter</span> <span class="o">==</span> <span class="s2">&quot;ha6647&quot;</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">oiii</span> <span class="o">=</span> <span class="n">sdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">sdf</span><span class="o">.</span><span class="n">Filter</span> <span class="o">==</span> <span class="s2">&quot;oiii5071&quot;</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="k">if</span> <span class="s2">&quot;skip&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">halpha</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">halpha</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;skip&quot;</span><span class="p">]]</span>
+        <span class="n">oiii</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">oiii</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;skip&quot;</span><span class="p">]]</span>
+
+    <span class="n">ha_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;ha_tiltgoal&quot;</span><span class="p">,</span> <span class="s2">&quot;ha_tilt&quot;</span><span class="p">,</span> <span class="s2">&quot;ha_diff&quot;</span><span class="p">,</span> <span class="s2">&quot;tol&quot;</span><span class="p">,</span> <span class="s2">&quot;isGood&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">oiii_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;oiii_tiltgoal&quot;</span><span class="p">,</span> <span class="s2">&quot;oiii_tilt&quot;</span><span class="p">,</span> <span class="s2">&quot;oiii_diff&quot;</span><span class="p">,</span> <span class="s2">&quot;tol&quot;</span><span class="p">,</span> <span class="s2">&quot;isGood&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">halpha</span><span class="p">:</span>
+        <span class="n">tilt</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">get_response_by_name</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">FilterTilter</span><span class="o">.</span><span class="n">Angle</span>
+        <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">tilt</span><span class="p">))</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ha_tilt</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">diff</span> <span class="o">&lt;=</span> <span class="n">tol</span><span class="p">:</span>
+            <span class="n">isGood</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">diff</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span>
+            <span class="n">isGood</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">ha_df</span> <span class="o">=</span> <span class="n">ha_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span>
+                <span class="s2">&quot;ha_tiltgoal&quot;</span><span class="p">:</span> <span class="n">ha_tilt</span><span class="p">,</span>
+                <span class="s2">&quot;ha_tilt&quot;</span><span class="p">:</span> <span class="n">tilt</span><span class="p">,</span>
+                <span class="s2">&quot;ha_diff&quot;</span><span class="p">:</span> <span class="n">diff</span><span class="p">,</span>
+                <span class="s2">&quot;tol&quot;</span><span class="p">:</span> <span class="n">tol</span><span class="p">,</span>
+                <span class="s2">&quot;isGood&quot;</span><span class="p">:</span> <span class="n">isGood</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">oiii</span><span class="p">:</span>
+        <span class="n">tilt</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">get_response_by_name</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">FilterTilter</span><span class="o">.</span><span class="n">Angle</span>
+        <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">tilt</span><span class="p">))</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">oiii_tilt</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">diff</span> <span class="o">&lt;=</span> <span class="n">tol</span><span class="p">:</span>
+            <span class="n">isGood</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">diff</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span>
+            <span class="n">isGood</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">oiii_df</span> <span class="o">=</span> <span class="n">oiii_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span>
+                <span class="s2">&quot;oiii_tiltgoal&quot;</span><span class="p">:</span> <span class="n">oiii_tilt</span><span class="p">,</span>
+                <span class="s2">&quot;oiii_tilt&quot;</span><span class="p">:</span> <span class="n">tilt</span><span class="p">,</span>
+                <span class="s2">&quot;oiii_diff&quot;</span><span class="p">:</span> <span class="n">diff</span><span class="p">,</span>
+                <span class="s2">&quot;tol&quot;</span><span class="p">:</span> <span class="n">tol</span><span class="p">,</span>
+                <span class="s2">&quot;isGood&quot;</span><span class="p">:</span> <span class="n">isGood</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;H alpha Tilt Checks&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">ha_df</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OIII Tilt Checks&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">oiii_df</span><span class="p">)</span>
+    <span class="n">Ngood_ha</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ha_df</span><span class="o">.</span><span class="n">isGood</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">Ngood_oiii</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">oiii_df</span><span class="o">.</span><span class="n">isGood</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Ngood_ha</span><span class="si">}</span><span class="s2"> H-alpha filters are in tolerance.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Ngood_oiii</span><span class="si">}</span><span class="s2"> OIII filters are in tolerance.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ha_df</span><span class="p">,</span> <span class="n">oiii_df</span>
+
+
+<div class="viewcode-block" id="AllSetTiltsToZero"><a class="viewcode-back" href="../../../autoapi/dfobserve/utils/FilterTilterUtils/index.html#dfobserve.utils.FilterTilterUtils.AllSetTiltsToZero">[docs]</a><span class="k">def</span> <span class="nf">AllSetTiltsToZero</span><span class="p">():</span>
+    <span class="k">pass</span></div>
+</pre></div>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Imad Pasha<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
