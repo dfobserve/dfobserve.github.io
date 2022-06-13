@@ -1,0 +1,869 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Utilities &#8212; DFObserve Manual</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Command Line Interface" href="CLI.html" />
+    <link rel="prev" title="Reponses from the Webserver" href="WebRequestSummary.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">DFObserve Manual</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    DFObserve Guide
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Manual
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Observation.html">
+   The Observation Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="AutoObserve.html">
+   The AutoObserve Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="QuickObserve.html">
+   QuickObserve
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Webserver.html">
+   Communicating through the Webserver
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="WebRequestSummary.html">
+   Reponses from the Webserver
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Utilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CLI.html">
+   Command Line Interface
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="api.html">
+   API documentation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="_autosummary/dfobserve.html">
+     dfobserve
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/dfobserve.checks.html">
+       dfobserve.checks
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.checks.check_cameras.html">
+         dfobserve.checks.check_cameras
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.checks.check_dragonfly.html">
+         dfobserve.checks.check_dragonfly
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.checks.check_filters.html">
+         dfobserve.checks.check_filters
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.checks.check_focusers.html">
+         dfobserve.checks.check_focusers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.checks.check_mount.html">
+         dfobserve.checks.check_mount
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/dfobserve.exceptions.html">
+       dfobserve.exceptions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.exceptions.exceptions.html">
+         dfobserve.exceptions.exceptions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/dfobserve.logging.html">
+       dfobserve.logging
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.logging.logger.html">
+         dfobserve.logging.logger
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/dfobserve.observing.html">
+       dfobserve.observing
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.observing.AutoObserve.html">
+         dfobserve.observing.AutoObserve
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.observing.Observation.html">
+         dfobserve.observing.Observation
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/dfobserve.utils.html">
+       dfobserve.utils
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.CameraUtils.html">
+         dfobserve.utils.CameraUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.FilterTilterUtils.html">
+         dfobserve.utils.FilterTilterUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.FlipFlatUtils.html">
+         dfobserve.utils.FlipFlatUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.FocuserUtils.html">
+         dfobserve.utils.FocuserUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.HardwareUtils.html">
+         dfobserve.utils.HardwareUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.MountUtils.html">
+         dfobserve.utils.MountUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.NMS_utils.html">
+         dfobserve.utils.NMS_utils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.NetworkUtils.html">
+         dfobserve.utils.NetworkUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.utils.SkyXUtils.html">
+         dfobserve.utils.SkyXUtils
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/dfobserve.webserver.html">
+       dfobserve.webserver
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/dfobserve.webserver.WebRequests.html">
+         dfobserve.webserver.WebRequests
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Utilities.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Utilities.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#camera-utils">
+   Camera Utils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filter-tilter-utils">
+   Filter Tilter Utils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flip-flat-utils">
+   Flip Flat Utils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hardware-utils">
+   Hardware Utils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mount-utils">
+   Mount Utils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#network-utils">
+   Network Utils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nms-utils">
+   NMS Utils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skyx-utils">
+   SkyX Utils
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Utilities</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#camera-utils">
+   Camera Utils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filter-tilter-utils">
+   Filter Tilter Utils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flip-flat-utils">
+   Flip Flat Utils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hardware-utils">
+   Hardware Utils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mount-utils">
+   Mount Utils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#network-utils">
+   Network Utils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nms-utils">
+   NMS Utils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skyx-utils">
+   SkyX Utils
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="utilities">
+<h1>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">#</a></h1>
+<p>The following indicates some of the base-level utilities present in the package, which can be used interactively in a “line by line” observing style. This is particularly useful for testing.</p>
+<p>As a note, the <code class="docutils literal notranslate"><span class="pre">DFObserve</span></code> package directory (i.e., the outermost directory) contains a file called <code class="docutils literal notranslate"><span class="pre">interactive_startup.py</span></code>. This file contains a bunch of imports to get all the organized utility functions into your interactive Python session in one go, defines a few helper functions, etc. I recommend running this Python file when running interactively.</p>
+<p>The utilities are all stored in the <code class="docutils literal notranslate"><span class="pre">dfobserve.utils</span></code> submodule, and are organized by the following: Cameras, Filter Tilters, FlipFlats, Hardware, Mount, Network, NMS (New Mexico Skies), and The Sky X.</p>
+<section id="camera-utils">
+<h2>Camera Utils<a class="headerlink" href="#camera-utils" title="Permalink to this headline">#</a></h2>
+<p>One of the most useful set of utils for testing, these allow you to take exposures through the webserver.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AllExpose</span></code>: Take an exposure. Supply <code class="docutils literal notranslate"><span class="pre">exptime</span></code>, <code class="docutils literal notranslate"><span class="pre">which</span></code> (to send command to, as recognized by <code class="docutils literal notranslate"><span class="pre">SendWebRequestNB</span></code>), a dictionary of any extras (like <code class="docutils literal notranslate"><span class="pre">savedir</span></code>), and any <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> recognized by <code class="docutils literal notranslate"><span class="pre">SendWebRequestNB</span></code>. A useful one is <code class="docutils literal notranslate"><span class="pre">skip</span></code>, which lets you skip sending the command to a list of units.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AllScienceExposure</span></code>: Take an exposure in which the ons (narrowband units) take an exposure while the offs take shorter, multiple exposures during.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AllFlatFieldExposure</span></code>: Take a flat on all units (or well, whichever specified by <code class="docutils literal notranslate"><span class="pre">which</span></code>). Relies on you having closed and turned on the flip flats first.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AllDarkExposure</span></code>: Similar but for darks.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Autofocus</span></code>: This runs the focus-run script (by Jeff). Has a bunch of params.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AllSetCameraTemperatures</span></code>: set the camera temps. If you pick a number &gt; 15, it disables the coolers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AllCheckCameraTemperatures</span></code>: Check that the camera temps are within tolerence of some desired value.</p></li>
+</ul>
+<p>A typical “quick” exposure command sent to all units might look like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">AllExpose</span><span class="p">(</span><span class="n">exptime</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+              <span class="n">extras</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;savedir&#39;</span><span class="p">:</span><span class="s1">&#39;/data/2022-10-24&#39;</span><span class="p">},</span>
+              <span class="n">skip</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Dragonfly302&#39;</span><span class="p">])</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because this is an expose type command, a progress bar will fill up with the asked for exposure time, then idle till readout is complete (usually takes a few seconds).</p>
+<p>If you want to test by sending an expose command to only a few units (i.e., it’s easier to describe which to send to than which to skip), there’s a <code class="docutils literal notranslate"><span class="pre">calc_skips()</span></code> function in the <code class="docutils literal notranslate"><span class="pre">interactive_startup.py</span></code> that works as:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">skips</span> <span class="o">=</span> <span class="n">calc_skips</span><span class="p">(</span><span class="n">use</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Dragonfly309&#39;</span><span class="p">,</span><span class="s1">&#39;Dragonfly310&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above example, you’d get a skip list of everything but those two units, which you can feed to <code class="docutils literal notranslate"><span class="pre">AllExpose</span></code>.</p>
+<p>As a reminder, the <code class="docutils literal notranslate"><span class="pre">which</span></code> param on all these expose commands goes to <code class="docutils literal notranslate"><span class="pre">SendWebRequestNB</span></code> which has convenience options like “all”, “science”, “science offs”, “OH”, “halpha” and “oiii”.</p>
+</section>
+<section id="filter-tilter-utils">
+<h2>Filter Tilter Utils<a class="headerlink" href="#filter-tilter-utils" title="Permalink to this headline">#</a></h2>
+<p>The filter tilter utils are fairly self explanatory. We have</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AllTiltScienceFilters</span></code>: Tilt the science filters. Args are <code class="docutils literal notranslate"><span class="pre">ha_tilt=_</span></code> and <code class="docutils literal notranslate"><span class="pre">oiii_tilt=_</span></code>, along with any <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> recognized by <code class="docutils literal notranslate"><span class="pre">SendWebRequestNB</span></code>. Only the filters marked science will be tilted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AllMoveFilters</span></code>: Move the science filters by a certain amount. Args are <code class="docutils literal notranslate"><span class="pre">ha_move</span></code> and <code class="docutils literal notranslate"><span class="pre">oiii_move</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AllGetFilterTilts</span></code>: Get the filter tilts of the science filters. Returns a df showing the Name, Filter, Angle, RawAngle, and ZeropointAngle.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AllCheckFilterTilts</span></code>: Check that the filter tilts are within tolerance of some desired tilt. I.e., after running <code class="docutils literal notranslate"><span class="pre">AllTiltScienceFilters</span></code> to 10 and 15 degrees, plug 10 and 15 into this function and get a df output that shows whether the filters are in tolerence of this.</p></li>
+</ul>
+<p><strong>Note:</strong> Don’t confuse <code class="docutils literal notranslate"><span class="pre">AllCheckFilterTilts</span></code>, which checks the success of a single tilt attempt, with <code class="docutils literal notranslate"><span class="pre">AllCheckFilterTilters</span></code>, a toplevel function part of the <code class="docutils literal notranslate"><span class="pre">checks</span></code> submodule that gets run during <code class="docutils literal notranslate"><span class="pre">AllCheckDragonfly</span></code> or which can be used to mark units down if tilts are out of tolerance across a set of tilt checks.</p>
+</section>
+<section id="flip-flat-utils">
+<h2>Flip Flat Utils<a class="headerlink" href="#flip-flat-utils" title="Permalink to this headline">#</a></h2>
+<p>These are even easier.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AllOpenFlipFlats</span></code>: Open them.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AllCloseFlipFlats</span></code>: Close them.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AllTurnOnFlipFlats</span></code>: Turn them on – arg <code class="docutils literal notranslate"><span class="pre">lampbrightness</span></code> controls the brightness, default is 60.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AllTurnOffFlipFlats</span></code>: Turn them off.</p></li>
+</ul>
+<p>All of these take the <code class="docutils literal notranslate"><span class="pre">which</span></code> param recognized by <code class="docutils literal notranslate"><span class="pre">SendWebRequestNB</span></code> along with the manual <code class="docutils literal notranslate"><span class="pre">skip</span></code> param to skip individual units.</p>
+</section>
+<section id="hardware-utils">
+<h2>Hardware Utils<a class="headerlink" href="#hardware-utils" title="Permalink to this headline">#</a></h2>
+<p>The Hardware Utils is basically a single class, <code class="docutils literal notranslate"><span class="pre">HardwareStatus</span></code>, whose job is to manipulate the hardware status file that has units marked up and down for use during observing. The current file running this is <code class="docutils literal notranslate"><span class="pre">&quot;/home/dragonfly/git/Dragonfly-Configuration/DRAGONFLY_HARDWARE_CURRENT_STATUS.csv&quot;</span></code>.</p>
+<p><strong>Note</strong>: There is CLI support for this util. See <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">Line</span> <span class="pre">Interface</span></code>.</p>
+<p>The basic usage looks like the following examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hs</span> <span class="o">=</span> <span class="n">HardwareStatus</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hs</span><span class="o">.</span><span class="n">InitializeHardwareStatus</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above sets all the units to <code class="docutils literal notranslate"><span class="pre">'UNDETERMINED'</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hs</span><span class="o">.</span><span class="n">MarkUnitDown</span><span class="p">(</span><span class="s1">&#39;Dragonfly310&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mark the Dragonfly310 unit as DOWN.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hs</span><span class="o">.</span><span class="n">MarkUnitUp</span><span class="p">(</span><span class="s1">&#39;Dragonfly301&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mark the Dragonfly301 unit as UP.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hs</span><span class="o">.</span><span class="n">MarkAccessibleUnitsUp</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ping the webserver with a <code class="docutils literal notranslate"><span class="pre">status</span></code> command and mark any units that connect and send a response as UP.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hs</span><span class="o">.</span><span class="n">MarkAllUnitsUp</span><span class="p">()</span> 
+<span class="n">hs</span><span class="o">.</span><span class="n">MarkAllUnitsDown</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>As expected, these mark all units as up or down.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hs</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>This returns the contents of the csv file, which is the name of each unit and whether it is up or down. When <code class="docutils literal notranslate"><span class="pre">verbose</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, prints to the terminal. If <code class="docutils literal notranslate"><span class="pre">return_units</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, returns the status response dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hs</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;up&#39;</span><span class="p">)</span>
+<span class="c1"># or </span>
+<span class="n">hs</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;down&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>These return simple lists of which units are marked up or down, e.g., <code class="docutils literal notranslate"><span class="pre">['Dragonfly301','Dragonfly302',...]</span></code>. Useful for quickly grabbing a list to <code class="docutils literal notranslate"><span class="pre">skip</span></code> sending commands to.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hs</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;viz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This last handy thing prints a visual map of the layout of the units, and colors them green if up and red if down.</p>
+</section>
+<section id="mount-utils">
+<h2>Mount Utils<a class="headerlink" href="#mount-utils" title="Permalink to this headline">#</a></h2>
+<p>Utilities for controlling the mount. At this point <em>most</em> are just wrappers for Bob’s code.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DitherMount</span></code>: Dither the mount. Takes two values, <code class="docutils literal notranslate"><span class="pre">east=_</span></code> and <code class="docutils literal notranslate"><span class="pre">north=_</span></code>, floats in arcmin. Will dither by that amount.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GuideMount</span></code>: Runs <code class="docutils literal notranslate"><span class="pre">guider</span> <span class="pre">magic</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HomeMount</span></code>: Homes the mount</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">StartMount</span></code>: Starts tracking</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">StopMount</span></code>: Stops Tracking</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ParkMount</span></code>: Parks Mount</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SlewMount</span></code>: Slew the mount to a target (target must be in the SkyX Database).</p></li>
+</ul>
+</section>
+<section id="network-utils">
+<h2>Network Utils<a class="headerlink" href="#network-utils" title="Permalink to this headline">#</a></h2>
+<p>Grab a dataframe with the unit names, IP addresses, which filter is on them, and some other ancillary info by calling</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sdf</span> <span class="o">=</span> <span class="n">get_status_df</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="nms-utils">
+<h2>NMS Utils<a class="headerlink" href="#nms-utils" title="Permalink to this headline">#</a></h2>
+<p>Grab info about what’s going on in NMS. (Under Construction).</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">isRoofOpen</span></code>: Returns true if the dome is open, false if not.</p></li>
+</ul>
+</section>
+<section id="skyx-utils">
+<h2>SkyX Utils<a class="headerlink" href="#skyx-utils" title="Permalink to this headline">#</a></h2>
+<p>Wrappers for JS calls to the SkyX.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">check_target_exists</span></code>: Add a target name and see whether it exists in the skyX database. Raises a <code class="docutils literal notranslate"><span class="pre">TargetNotFound</span></code> Error if not.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetMountPointing</span></code>: Return parsed dictionary containing the ra, dec, alt, and az of the telescope as returned by the mount. Used for passing into the expose commands for being saved in a header.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-testing-py"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-testing-py",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-testing-py'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="WebRequestSummary.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Reponses from the Webserver</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="CLI.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Command Line Interface</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Imad Pasha<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

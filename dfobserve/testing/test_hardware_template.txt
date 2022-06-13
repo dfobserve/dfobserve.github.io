@@ -1,0 +1,10 @@
+192.168.50.11  Dragonfly301               Unknown         Unknown    "22550-10.0*(x-33)"       ha6647
+192.168.50.12  Dragonfly302               Unknown         Unknown    "22550-10.0*(x-33)"       ha6647
+192.168.50.13  Dragonfly303               Unknown         Unknown    "22600-10.0*(x-33)"       ha6647
+192.168.50.14  Dragonfly304               Unknown         Unknown    "22800-10.0*(x-33)"       ha_right
+192.168.50.15  Dragonfly305               Unknown         Unknown    "22800-10.0*(x-33)"       ha_left
+192.168.50.16  Dragonfly306               Unknown         Unknown    "22800-10.0*(x-33)"       oiii_right
+192.168.50.17  Dragonfly307               Unknown         Unknown    "22800-10.0*(x-33)"       oiii_left
+192.168.50.18  Dragonfly308               Unknown         Unknown    "22800-10.0*(x-33)"       OH_off
+192.168.50.19  Dragonfly309               Unknown         Unknown    "22800-10.0*(x-33)"       OH
+192.168.50.20  Dragonfly310               Unknown         Unknown    "22800-10.0*(x-33)"       oiii5071

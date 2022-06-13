@@ -1,0 +1,1076 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dfobserve.webserver.WebRequests &#8212; DFObserve Manual</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">DFObserve Manual</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   DFObserve Guide
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Manual
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Observation.html">
+   The Observation Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../AutoObserve.html">
+   The AutoObserve Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../QuickObserve.html">
+   QuickObserve
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Webserver.html">
+   Communicating through the Webserver
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../WebRequestSummary.html">
+   Reponses from the Webserver
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Utilities.html">
+   Utilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CLI.html">
+   Command Line Interface
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../api.html">
+   API documentation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../_autosummary/dfobserve.html">
+     dfobserve
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.checks.html">
+       dfobserve.checks
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.checks.check_cameras.html">
+         dfobserve.checks.check_cameras
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.checks.check_dragonfly.html">
+         dfobserve.checks.check_dragonfly
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.checks.check_filters.html">
+         dfobserve.checks.check_filters
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.checks.check_focusers.html">
+         dfobserve.checks.check_focusers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.checks.check_mount.html">
+         dfobserve.checks.check_mount
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.exceptions.html">
+       dfobserve.exceptions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.exceptions.exceptions.html">
+         dfobserve.exceptions.exceptions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.logging.html">
+       dfobserve.logging
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.logging.logger.html">
+         dfobserve.logging.logger
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.observing.html">
+       dfobserve.observing
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.observing.AutoObserve.html">
+         dfobserve.observing.AutoObserve
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.observing.Observation.html">
+         dfobserve.observing.Observation
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.utils.html">
+       dfobserve.utils
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.CameraUtils.html">
+         dfobserve.utils.CameraUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.FilterTilterUtils.html">
+         dfobserve.utils.FilterTilterUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.FlipFlatUtils.html">
+         dfobserve.utils.FlipFlatUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.HardwareUtils.html">
+         dfobserve.utils.HardwareUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.MountUtils.html">
+         dfobserve.utils.MountUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.NMS_utils.html">
+         dfobserve.utils.NMS_utils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.NetworkUtils.html">
+         dfobserve.utils.NetworkUtils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.utils.SkyXUtils.html">
+         dfobserve.utils.SkyXUtils
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../_autosummary/dfobserve.webserver.html">
+       dfobserve.webserver
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../_autosummary/dfobserve.webserver.WebRequests.html">
+         dfobserve.webserver.WebRequests
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <h1>Source code for dfobserve.webserver.WebRequests</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Functions for Using the Webserver to interact with the instrument.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span> <span class="nn">urllib.error</span><span class="o">,</span> <span class="nn">urllib.parse</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span>
+
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">..utils.NetworkUtils</span> <span class="kn">import</span> <span class="n">get_status_df</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;SendCommand&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SendWebRequestNB&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Status&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;NewSendCommand&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ParseResponse&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;APIResponse&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;WebRequestSummary&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;WrapDF&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">printHeader</span><span class="p">(</span><span class="n">hdr</span><span class="p">):</span>
+    <span class="n">colnum</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">hdr</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#      </span><span class="si">%3d</span><span class="s2">   </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">colnum</span><span class="p">,</span> <span class="n">col</span><span class="p">))</span>
+        <span class="n">colnum</span> <span class="o">=</span> <span class="n">colnum</span> <span class="o">+</span> <span class="mi">1</span>
+
+
+<span class="c1"># def SWRTAErrorHandler(signum, frame):</span>
+<span class="c1">#    print(f&quot;In error handler. Signal {signum} received&quot;)</span>
+<span class="c1">#    os._exit(1)</span>
+
+
+<div class="viewcode-block" id="NewSendCommand"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.NewSendCommand">[docs]</a><span class="k">def</span> <span class="nf">NewSendCommand</span><span class="p">(</span><span class="n">command</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ip</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{},</span> <span class="n">timeout</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;http://</span><span class="si">{</span><span class="n">ip</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">/api/</span><span class="si">{</span><span class="n">command</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">r</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;ConnectionError&quot;</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;HTTPError&quot;</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;RequestException&quot;</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectTimeout</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;ConnectTimeout&quot;</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">ReadTimeout</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;ReadTimeout&quot;</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">Timeout</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Timeout&quot;</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Unknown Exception&quot;</span></div>
+
+
+<div class="viewcode-block" id="Status"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.Status">[docs]</a><span class="k">class</span> <span class="nc">Status</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Wrapper for status response from instrument</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">unit_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">unit</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;DRAGONFLY&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;unit as string must by dragonflyXXX or DRAGONFLYXX&quot;</span><span class="p">)</span>
+                <span class="k">return</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">unit_num</span> <span class="o">=</span> <span class="n">unit</span>
+        <span class="n">ip_num</span> <span class="o">=</span> <span class="n">unit_num</span> <span class="o">-</span> <span class="mi">290</span>
+        <span class="n">ip</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;192.168.50.</span><span class="si">{</span><span class="n">ip_num</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">response</span> <span class="o">=</span> <span class="n">NewSendCommand</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="n">ip</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">IP</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;IPAddress&quot;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">construct_dataframes</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">response_fields</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s2">&quot;Activity&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;CameraProperties&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;CurrentExposure&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;LastExposure&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Focus&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Extras&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;FlipFlat&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;FilterTilter&quot;</span><span class="p">,</span>
+            <span class="p">]</span>
+
+<div class="viewcode-block" id="Status.__repr__"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.Status.__repr__">[docs]</a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Status Response for Unit at IP: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">IP</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2"> Accessible Fields: </span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">response_fields</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+<div class="viewcode-block" id="Status.__str__"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.Status.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Status Response for Unit at IP: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">IP</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2"> Accessible Fields: </span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">response_fields</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+<div class="viewcode-block" id="Status.construct_dataframes"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.Status.construct_dataframes">[docs]</a>    <span class="k">def</span> <span class="nf">construct_dataframes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Activity</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;Activity&quot;</span><span class="p">],</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CameraProperties</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;CameraProperties&quot;</span><span class="p">],</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CurrentExposure</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;CurrentExposure&quot;</span><span class="p">],</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">LastExposure</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;LastExposure&quot;</span><span class="p">],</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Focus</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;Focus&quot;</span><span class="p">],</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Extras</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;XtraCalculations&quot;</span><span class="p">],</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">FlipFlat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;FlipFlat&quot;</span><span class="p">],</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">FilterTilter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;FilterTilter&quot;</span><span class="p">],</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="SendCommand"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.SendCommand">[docs]</a><span class="k">def</span> <span class="nf">SendCommand</span><span class="p">(</span>
+    <span class="n">command</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">ip</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">timeout_seconds</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">):</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;http://</span><span class="si">{</span><span class="n">ip</span><span class="si">}</span><span class="s2">:3000/api/</span><span class="si">{</span><span class="n">command</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sending command: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout_seconds</span><span class="p">)</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Received: </span><span class="si">{</span><span class="n">content</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ip</span><span class="p">,</span> <span class="n">content</span>
+    <span class="k">except</span> <span class="n">urllib</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown command </span><span class="si">{</span><span class="n">command</span><span class="si">}</span><span class="s2"> on machine </span><span class="si">{</span><span class="n">ip</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ip</span><span class="p">,</span> <span class="mi">0</span>
+
+    <span class="k">except</span> <span class="n">urllib</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">URLError</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Machine </span><span class="si">{</span><span class="n">ip</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">) is offline&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ip</span><span class="p">,</span> <span class="mi">1</span>
+
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Machine </span><span class="si">{</span><span class="n">ip</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">) had an unknown exception&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ip</span><span class="p">,</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="SendWebRequestNB"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.SendWebRequestNB">[docs]</a><span class="k">def</span> <span class="nf">SendWebRequestNB</span><span class="p">(</span>
+    <span class="n">command</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">which</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+    <span class="n">skip</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[],</span>
+    <span class="n">ha_command</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">oiii_command</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">ha_off_command</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">oiii_off_command</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">OH_command</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">OH_off_command</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">all_flathaving_command</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">wait_for_response</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">timeout_global</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">120</span><span class="p">,</span>
+    <span class="n">timeout_seconds</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="n">dryrun</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">hardware_config_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Send a webrequest to the array but divy up commands by type if requested.</span>
+<span class="sd">    No required inputs, but if it is run with no inputs, a webrequest will not be sent.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    command: str, optional</span>
+<span class="sd">        command to broadcast to units. This option acts in concert with the `which` keyword argument,</span>
+<span class="sd">        which determines where the command will be sent. If further separate commands are needed, use</span>
+<span class="sd">        the individually coded keywords. (Default: None)</span>
+<span class="sd">    which: str, optional</span>
+<span class="sd">        which units to broadcast the `command` to. Options include</span>
+<span class="sd">            `&#39;all&#39;`: send to all lenses. (for example, make all lenses take a 0 second exposure) \n</span>
+<span class="sd">            `&#39;science&#39;`: send to the H-alpha and OIII lenses only. All others will idle. \n</span>
+<span class="sd">            `&#39;science offs&#39;`: send to the offs for H-alpha and OIII only. \n</span>
+<span class="sd">            `&#39;OH&#39;`: send command to the OH on and OH off units</span>
+<span class="sd">            `&#39;halpha&#39;`: send to halpha units only</span>
+<span class="sd">            `&#39;oiii&#39;`: send to the OIII units only</span>
+<span class="sd">        Note that the supplication of any of the more specific keyword args (e.g., `OH_command`) will</span>
+<span class="sd">        overwrite the command being sent when this option is used. (Default: &#39;all&#39;)</span>
+<span class="sd">    skip: list, default: []</span>
+<span class="sd">        any units to skip when sending this command (e.g., those that are down). Should be list of str like &#39;Dragonfly301&#39;</span>
+<span class="sd">    ha_command: str, optional</span>
+<span class="sd">        command to send only to the Halpha units. (Default: None)</span>
+<span class="sd">    oiii_command: str, optional</span>
+<span class="sd">        command to send only to the OIII units. (Default: None)</span>
+<span class="sd">    ha_off_command: str, optional</span>
+<span class="sd">        command to send only to the offband units of Halpha. (Default: None)</span>
+<span class="sd">    oiii_off_command: str, optional</span>
+<span class="sd">        command to send only to the offband units of OIII. (Default: None)</span>
+<span class="sd">    OH_command: str, optional</span>
+<span class="sd">        command to send only to the OH skyline monitoring units. (Default: None)</span>
+<span class="sd">    OH_off_command: str, optional</span>
+<span class="sd">        command to send only to the OH skyline off band units. (Default: None)</span>
+<span class="sd">    all_flathaving_command: str, optional</span>
+<span class="sd">        command to send to all units with a flip flat attached. (Default: None)</span>
+<span class="sd">    verbose: bool, default: True</span>
+<span class="sd">        print out info along the way. (Default: True)</span>
+<span class="sd">    wait_for_response: bool, default: True</span>
+<span class="sd">        wait for all machines to send a response before returning (until timeout). (Default: True)</span>
+<span class="sd">    timeout_global: int, default: 120</span>
+<span class="sd">        time in seconds to wait while pending machines finish tasks before exiting. (Default: 120)</span>
+<span class="sd">    timeout_seconds: int, default: 10</span>
+<span class="sd">        time in seconds after which to close the connection and mark a machine as failed. (Default: 10)</span>
+<span class="sd">    dryrun: bool, default: False</span>
+<span class="sd">        don&#39;t execute the command, but show what commands will be sent to which IP addresses. (Default: False)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    result_df or WebRequestSummary: pandas.DataFrame</span>
+<span class="sd">        dataframe (or wrapped version) containing the webrequest results.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">hardware_config_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">get_status_df</span><span class="p">(</span><span class="n">hardware_config_file</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">get_status_df</span><span class="p">()</span>
+
+    <span class="n">command_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1"># Parse selection</span>
+    <span class="c1"># If initial command is given, figure out where to send it</span>
+    <span class="k">if</span> <span class="n">command</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">which</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="s2">&quot;science&quot;</span><span class="p">,</span> <span class="s2">&quot;science offs&quot;</span><span class="p">,</span> <span class="s2">&quot;OH&quot;</span><span class="p">,</span> <span class="s2">&quot;halpha&quot;</span><span class="p">,</span> <span class="s2">&quot;oiii&quot;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span>
+                <span class="s2">&quot;unit selection not recognized. Must select from: &#39;all&#39;,&#39;science&#39;,&#39;science offs&#39;,&#39;OH&#39;,&#39;halpha&#39;,&#39;oiii&#39;&quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">which</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+                <span class="n">unit</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+                <span class="n">ip</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;IP&quot;</span><span class="p">]</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">ind</span>
+                <span class="n">command_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">:</span> <span class="n">ip</span><span class="p">,</span> <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="n">command</span><span class="p">}</span>
+        <span class="k">elif</span> <span class="n">which</span> <span class="o">==</span> <span class="s2">&quot;science&quot;</span><span class="p">:</span>
+            <span class="n">mini</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[((</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ha6647&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;oiii5071&quot;</span><span class="p">))]</span>
+            <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">mini</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+                <span class="n">unit</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">ind</span>
+                <span class="n">ip</span> <span class="o">=</span> <span class="n">mini</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;IP&quot;</span><span class="p">]</span>
+                <span class="n">command_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">:</span> <span class="n">ip</span><span class="p">,</span> <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="n">command</span><span class="p">}</span>
+        <span class="k">elif</span> <span class="n">which</span> <span class="o">==</span> <span class="s2">&quot;science offs&quot;</span><span class="p">:</span>
+            <span class="n">mini</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                <span class="p">(</span>
+                    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ha_left&quot;</span><span class="p">)</span>
+                    <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ha_right&quot;</span><span class="p">)</span>
+                    <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;oiii_left&quot;</span><span class="p">)</span>
+                    <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;oiii_right&quot;</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">]</span>
+            <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">mini</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+                <span class="n">unit</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">ind</span>
+                <span class="n">ip</span> <span class="o">=</span> <span class="n">mini</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;IP&quot;</span><span class="p">]</span>
+                <span class="n">command_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">:</span> <span class="n">ip</span><span class="p">,</span> <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="n">command</span><span class="p">}</span>
+        <span class="k">elif</span> <span class="n">which</span> <span class="o">==</span> <span class="s2">&quot;OH&quot;</span><span class="p">:</span>
+            <span class="n">mini</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[((</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;OH_off&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;OH&quot;</span><span class="p">))]</span>
+            <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">mini</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+                <span class="n">unit</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">ind</span>
+                <span class="n">ip</span> <span class="o">=</span> <span class="n">mini</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;IP&quot;</span><span class="p">]</span>
+                <span class="n">command_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">:</span> <span class="n">ip</span><span class="p">,</span> <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="n">command</span><span class="p">}</span>
+        <span class="k">elif</span> <span class="n">which</span> <span class="o">==</span> <span class="s2">&quot;halpha&quot;</span><span class="p">:</span>
+            <span class="n">mini</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ha6647&quot;</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">mini</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+                <span class="n">unit</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">ind</span>
+                <span class="n">ip</span> <span class="o">=</span> <span class="n">mini</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;IP&quot;</span><span class="p">]</span>
+                <span class="n">command_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">:</span> <span class="n">ip</span><span class="p">,</span> <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="n">command</span><span class="p">}</span>
+        <span class="k">elif</span> <span class="n">which</span> <span class="o">==</span> <span class="s2">&quot;oiii&quot;</span><span class="p">:</span>
+            <span class="n">mini</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;oiii5071&quot;</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">mini</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+                <span class="n">unit</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">ind</span>
+                <span class="n">ip</span> <span class="o">=</span> <span class="n">mini</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;IP&quot;</span><span class="p">]</span>
+                <span class="n">command_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">:</span> <span class="n">ip</span><span class="p">,</span> <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="n">command</span><span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">all_flathaving_command</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mini</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+            <span class="p">(</span>
+                <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ha6647&quot;</span><span class="p">)</span>
+                <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;OH&quot;</span><span class="p">)</span>
+                <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;OH_off&quot;</span><span class="p">)</span>
+                <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;oiii5071&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">]</span>
+        <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">mini</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">ind</span>
+            <span class="n">ip</span> <span class="o">=</span> <span class="n">mini</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;IP&quot;</span><span class="p">]</span>
+            <span class="n">command_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span>
+                <span class="s2">&quot;ip&quot;</span><span class="p">:</span> <span class="n">ip</span><span class="p">,</span>
+                <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="n">all_flathaving_command</span><span class="p">,</span>
+            <span class="p">}</span>
+
+    <span class="c1"># Now go through and overwrite any specifically asked for ones</span>
+    <span class="k">if</span> <span class="n">ha_command</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mini</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ha6647&quot;</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">mini</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">ind</span>
+            <span class="n">ip</span> <span class="o">=</span> <span class="n">mini</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;IP&quot;</span><span class="p">]</span>
+            <span class="n">command_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">:</span> <span class="n">ip</span><span class="p">,</span> <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="n">ha_command</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">oiii_command</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mini</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;oiii5071&quot;</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">mini</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">ind</span>
+            <span class="n">ip</span> <span class="o">=</span> <span class="n">mini</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;IP&quot;</span><span class="p">]</span>
+            <span class="n">command_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">:</span> <span class="n">ip</span><span class="p">,</span> <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="n">oiii_command</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">ha_off_command</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mini</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[((</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ha_left&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ha_right&quot;</span><span class="p">))]</span>
+        <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">mini</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">ind</span>
+            <span class="n">ip</span> <span class="o">=</span> <span class="n">mini</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;IP&quot;</span><span class="p">]</span>
+            <span class="n">command_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">:</span> <span class="n">ip</span><span class="p">,</span> <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="n">ha_off_command</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">oiii_off_command</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mini</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[((</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;oiii_left&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;oiii_right&quot;</span><span class="p">))]</span>
+        <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">mini</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">ind</span>
+            <span class="n">ip</span> <span class="o">=</span> <span class="n">mini</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;IP&quot;</span><span class="p">]</span>
+            <span class="n">command_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">:</span> <span class="n">ip</span><span class="p">,</span> <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="n">oiii_off_command</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">OH_command</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mini</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;OH&quot;</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">mini</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">ind</span>
+            <span class="n">ip</span> <span class="o">=</span> <span class="n">mini</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;IP&quot;</span><span class="p">]</span>
+            <span class="n">command_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">:</span> <span class="n">ip</span><span class="p">,</span> <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="n">OH_command</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">OH_off_command</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mini</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;OH_off&quot;</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">mini</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">ind</span>
+            <span class="n">ip</span> <span class="o">=</span> <span class="n">mini</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;IP&quot;</span><span class="p">]</span>
+            <span class="n">command_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">:</span> <span class="n">ip</span><span class="p">,</span> <span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="n">OH_off_command</span><span class="p">}</span>
+
+    <span class="n">webrequest_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">command_dict</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+    <span class="n">webrequest_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;ip&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">webrequest_df</span> <span class="o">=</span> <span class="n">webrequest_df</span><span class="p">[</span><span class="o">~</span><span class="n">webrequest_df</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">skip</span><span class="p">)]</span>
+    <span class="n">webrequest_df</span> <span class="o">=</span> <span class="n">webrequest_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">verbose</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">dryrun</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The following commands are queued to send to the following units&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------------------------------------------------------------&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">webrequest_df</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">dryrun</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">webrequest_df</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">dryrun</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sending Request...&quot;</span><span class="p">)</span>
+        <span class="n">responses</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">fulltext</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">webrequest_df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">SendCommand</span><span class="p">(</span>
+                <span class="n">webrequest_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;command&quot;</span><span class="p">],</span>
+                <span class="n">ip</span><span class="o">=</span><span class="n">webrequest_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">],</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">ind</span><span class="p">,</span>
+                <span class="n">timeout_seconds</span><span class="o">=</span><span class="n">timeout_seconds</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
+                <span class="n">response_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">APIResponse</span><span class="p">(</span><span class="n">response_dict</span><span class="p">)</span>
+                <span class="n">add_res</span> <span class="o">=</span> <span class="s2">&quot;PENDING&quot;</span>
+                <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">add_res</span><span class="p">)</span>
+                <span class="n">fulltext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Command Not Recognized (HTTP err)&quot;</span><span class="p">)</span>
+                <span class="n">fulltext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Machine Down (URL err)&quot;</span><span class="p">)</span>
+                <span class="n">fulltext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Unknown Error&quot;</span><span class="p">)</span>
+                <span class="n">fulltext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">webrequest_df</span><span class="p">[</span><span class="s2">&quot;response_summary&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">responses</span>
+        <span class="n">webrequest_df</span><span class="p">[</span><span class="s2">&quot;full_response&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fulltext</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initial Responses:&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;------------------&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">webrequest_df</span><span class="p">)</span>
+        <span class="n">nPending</span> <span class="o">=</span> <span class="n">webrequest_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+            <span class="n">webrequest_df</span><span class="o">.</span><span class="n">response_summary</span> <span class="o">==</span> <span class="s2">&quot;PENDING&quot;</span><span class="p">,</span> <span class="s2">&quot;response_summary&quot;</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;nPending: </span><span class="si">{</span><span class="n">nPending</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">wait_for_response</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">WebRequestSummary</span><span class="p">(</span><span class="n">webrequest_df</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">nPending</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">WebRequestSummary</span><span class="p">(</span><span class="n">webrequest_df</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">nPending</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">start_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="s2">&quot;request_type&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;request_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;exposure&quot;</span><span class="p">:</span>
+                    <span class="n">pbar_time</span> <span class="o">=</span> <span class="n">timeout_global</span> <span class="o">-</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;readout_time&quot;</span><span class="p">]</span>
+                    <span class="nb">print</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Exposing for </span><span class="si">{</span><span class="n">pbar_time</span><span class="si">}</span><span class="s2"> sec, then waiting up </span><span class="si">{</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;readout_time&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> s for readout.&quot;</span>
+                    <span class="p">)</span>
+                <span class="k">with</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="n">pbar_time</span><span class="p">)</span> <span class="k">as</span> <span class="n">pbar</span><span class="p">:</span>
+                    <span class="k">while</span> <span class="n">nPending</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+                        <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+                        <span class="n">pending_df</span> <span class="o">=</span> <span class="n">webrequest_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                            <span class="p">(</span><span class="n">webrequest_df</span><span class="o">.</span><span class="n">response_summary</span> <span class="o">==</span> <span class="s2">&quot;PENDING&quot;</span><span class="p">)</span>
+                        <span class="p">]</span>
+                        <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">pending_df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+                            <span class="n">response</span> <span class="o">=</span> <span class="n">SendCommand</span><span class="p">(</span>
+                                <span class="n">command</span><span class="o">=</span><span class="s2">&quot;status&quot;</span><span class="p">,</span>
+                                <span class="n">ip</span><span class="o">=</span><span class="n">pending_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">],</span>
+                                <span class="n">timeout_seconds</span><span class="o">=</span><span class="n">timeout_seconds</span><span class="p">,</span>
+                            <span class="p">)</span>
+                            <span class="k">if</span> <span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pending machine went offline!&quot;</span><span class="p">)</span>
+                                <span class="n">webrequest_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                                    <span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;response_summary&quot;</span>
+                                <span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Machine Down&quot;</span>
+                                <span class="n">nPending</span> <span class="o">-=</span> <span class="mi">1</span>
+
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="n">response_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                                <span class="n">response_res</span> <span class="o">=</span> <span class="n">APIResponse</span><span class="p">(</span><span class="n">response_dict</span><span class="p">)</span>
+                                <span class="k">if</span> <span class="n">response_res</span><span class="o">.</span><span class="n">Activity</span><span class="o">.</span><span class="n">Any</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+                                    <span class="n">nPending</span> <span class="o">-=</span> <span class="mi">1</span>
+                                    <span class="n">webrequest_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                                        <span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;response_summary&quot;</span>
+                                    <span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;SUCCESS&quot;</span>
+                                    <span class="n">webrequest_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                                        <span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;full_response&quot;</span>
+                                    <span class="p">]</span> <span class="o">=</span> <span class="n">response_res</span>
+
+                            <span class="n">time_delta</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+                            <span class="k">if</span> <span class="n">time_delta</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">timeout_global</span><span class="p">:</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time Limit Exceeded waiting.&quot;</span><span class="p">)</span>
+                                <span class="k">return</span> <span class="n">WebRequestSummary</span><span class="p">(</span><span class="n">webrequest_df</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">while</span> <span class="n">nPending</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+                    <span class="n">pending_df</span> <span class="o">=</span> <span class="n">webrequest_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                        <span class="p">(</span><span class="n">webrequest_df</span><span class="o">.</span><span class="n">response_summary</span> <span class="o">==</span> <span class="s2">&quot;PENDING&quot;</span><span class="p">)</span>
+                    <span class="p">]</span>
+                    <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">pending_df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+                        <span class="n">response</span> <span class="o">=</span> <span class="n">SendCommand</span><span class="p">(</span>
+                            <span class="n">command</span><span class="o">=</span><span class="s2">&quot;status&quot;</span><span class="p">,</span>
+                            <span class="n">ip</span><span class="o">=</span><span class="n">pending_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">],</span>
+                            <span class="n">timeout_seconds</span><span class="o">=</span><span class="n">timeout_seconds</span><span class="p">,</span>
+                        <span class="p">)</span>
+                        <span class="k">if</span> <span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pending machine went offline!&quot;</span><span class="p">)</span>
+                            <span class="n">webrequest_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;response_summary&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Machine Down&quot;</span>
+                            <span class="n">nPending</span> <span class="o">-=</span> <span class="mi">1</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">response_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                            <span class="n">response_res</span> <span class="o">=</span> <span class="n">APIResponse</span><span class="p">(</span><span class="n">response_dict</span><span class="p">)</span>
+                            <span class="k">if</span> <span class="n">response_res</span><span class="o">.</span><span class="n">Activity</span><span class="o">.</span><span class="n">Any</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+                                <span class="n">nPending</span> <span class="o">-=</span> <span class="mi">1</span>
+                                <span class="n">webrequest_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;response_summary&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;SUCCESS&quot;</span>
+                                <span class="n">webrequest_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">,</span> <span class="s2">&quot;full_response&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">response_res</span>
+
+                    <span class="n">time_delta</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+                    <span class="k">if</span> <span class="n">time_delta</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">timeout_global</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time Limit Exceeded waiting.&quot;</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">WebRequestSummary</span><span class="p">(</span><span class="n">webrequest_df</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">WebRequestSummary</span><span class="p">(</span><span class="n">webrequest_df</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">WebRequestSummary</span><span class="p">(</span><span class="n">webrequest_df</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">WebRequestSummary</span><span class="p">(</span><span class="n">webrequest_df</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="WebRequestSummary"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.WebRequestSummary">[docs]</a><span class="k">class</span> <span class="nc">WebRequestSummary</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">webrequest_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Class container for the responses of a webrequest sent to the pis.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        webrequest_df: pandas.DataFrame</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">webrequest_df</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">Name</span><span class="p">:</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">Name</span> <span class="o">==</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;full_response&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">get_response_by_ip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Obtain the APIResponse object for a given unit</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        ip: str</span>
+<span class="sd">            IP address of the unit</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">ip</span> <span class="o">==</span> <span class="n">ip</span><span class="p">,</span> <span class="s2">&quot;full_response&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">get_response_by_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Obtain the APIResponse object for a given unit</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        ip: str</span>
+<span class="sd">            IP address of the unit</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">Name</span> <span class="o">==</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;full_response&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<div class="viewcode-block" id="WebRequestSummary.__str__"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.WebRequestSummary.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="WebRequestSummary.__repr__"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.WebRequestSummary.__repr__">[docs]</a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="APIResponse"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.APIResponse">[docs]</a><span class="k">class</span> <span class="nc">APIResponse</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response_dict</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Container for webserver response.</span>
+<span class="sd">        Use APIResponse.info() to see fields.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        response_dict: dict</span>
+<span class="sd">            dictionary of the API response from the webserver</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">response_dict</span> <span class="o">=</span> <span class="n">response_dict</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">response_dict</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">IP</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">response_dict</span><span class="p">[</span><span class="s2">&quot;IPAddress&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">response_fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_dataframes</span><span class="p">()</span>
+
+<div class="viewcode-block" id="APIResponse.__repr__"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.APIResponse.__repr__">[docs]</a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;APIResponse[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">IP</span><span class="si">}</span><span class="s2">]&quot;</span></div>
+
+<div class="viewcode-block" id="APIResponse.__str__"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.APIResponse.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;APIResponse[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">IP</span><span class="si">}</span><span class="s2">]&quot;</span></div>
+
+<div class="viewcode-block" id="APIResponse.info"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.APIResponse.info">[docs]</a>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Prints the accessible fields (attributes) of the object.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        verbose: bool, default: False</span>
+<span class="sd">            show just the field names, or also all the values</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status Response for Unit at IP: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">IP</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">response_fields</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ATTRIBUTE: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Status Response for Unit at IP: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">IP</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2"> Accessible Fields: </span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">response_fields</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="APIResponse.construct_dataframes"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.APIResponse.construct_dataframes">[docs]</a>    <span class="k">def</span> <span class="nf">construct_dataframes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructs individual DataFrames for each main field in the status response, and wrap them.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response_fields</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">response_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">,</span> <span class="s2">&quot;IPAddress&quot;</span><span class="p">]:</span>
+                <span class="nb">setattr</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="p">,</span>
+                    <span class="n">i</span><span class="p">,</span>
+                    <span class="n">WrapDF</span><span class="p">(</span>
+                        <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">response_dict</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+                    <span class="p">),</span>
+                <span class="p">)</span>
+                <span class="n">response_fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response_fields</span></div></div>
+
+
+<div class="viewcode-block" id="ParseResponse"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.ParseResponse">[docs]</a><span class="k">def</span> <span class="nf">ParseResponse</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">return_type</span><span class="o">=</span><span class="s2">&quot;dict&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parses the byte-string response from the webserver into either a dictionary or an API object.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    response: byte</span>
+<span class="sd">        response from the webserver (generally a status)</span>
+<span class="sd">    return type: str, default: &#39;dict&#39;</span>
+<span class="sd">        type of object to return. Options are &#39;dict&#39; or &#39;API&#39;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">parsed_response</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">return_type</span> <span class="o">==</span> <span class="s2">&quot;dict&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">parsed_response</span>
+    <span class="k">elif</span> <span class="n">return_type</span> <span class="o">==</span> <span class="s2">&quot;API&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">APIResponse</span><span class="p">(</span><span class="n">parsed_response</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;Return type must be either dict or API&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="WrapDF"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.WrapDF">[docs]</a><span class="k">class</span> <span class="nc">WrapDF</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Dataframe wrapper that provides a &#39;get&#39; method.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        df: pandas.DataFrame</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logstring</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span>
+
+<div class="viewcode-block" id="WrapDF.__repr__"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.WrapDF.__repr__">[docs]</a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="WrapDF.__str__"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.WrapDF.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="WrapDF.get"><a class="viewcode-back" href="../../../autoapi/dfobserve/webserver/index.html#dfobserve.webserver.WebRequests.WrapDF.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the value of an associated field. Wrapper for a loc type command.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        field: str</span>
+<span class="sd">            name of the field to get value for.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div></div>
+</pre></div>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Imad Pasha<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

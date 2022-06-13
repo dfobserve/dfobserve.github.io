@@ -1,0 +1,15 @@
+format: jb-book
+root: intro
+parts:
+  - caption: Manual
+    chapters:
+    - file: Observation
+    - file: AutoObserve
+    - file: QuickObserve
+    - file: Webserver
+    - file: WebRequestSummary
+    - file: Utilities
+    - file: CLI
+  - caption: API
+    chapters: 
+      - file: api.rst
